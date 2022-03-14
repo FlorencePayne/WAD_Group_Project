@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+	<head>
+		<title>
+			{% block title_block %}
+				Floppabunny
+			{% endblock %}
+		</title>
+	</head>
+	<body>
+		<div>
+		{% block body_block %}
+		{% endblock %}
+		</div>
+		<div>
+			<ul>
+			<li><a href="{% url 'floppa:index' %}">Index</a></li>
+			<li><a href="{% url 'floppa:about' %}">About</a></li>
+			</ul>
+		</div>
+	</body>
+</html>
