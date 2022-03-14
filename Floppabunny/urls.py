@@ -15,7 +15,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.urls import include
+from floppa import views
 
 urlpatterns = [
+    path('', views.index, name='index'),
+    path('floppa/', include('floppa.urls')),
     path('admin/', admin.site.urls),
 ]
