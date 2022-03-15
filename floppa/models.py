@@ -2,10 +2,10 @@ from django.db import models
 
 #LARGE TABLES#
 class Customer(models.Model):
-    userID = models.CharField(max_length=8, unique=True)
-    username = models.CharField(max_length=20)
+    userID = models.AutoField(max_length=8, primary_key=True, unique=True)
+    username = models.CharField(max_length=20, unique=True)
     password = models.CharField(max_length=20)
-    email = models.CharField(max_length=40)
+    email = models.CharField(max_length=40, unique=True)
     firstname = models.CharField(max_length=20)
     surname = models.CharField(max_length=20)
     address1 = models.CharField(max_length=20)
@@ -16,7 +16,7 @@ class Customer(models.Model):
         return self.username
 
 class Necklace(models.Model):
-    necklaceID = models.CharField(max_length=8, unique=True)
+    necklaceID = models.AutoField(max_length=8, primary_key=True, unique=True)
     name = models.CharField(max_length=20)
     colour = models.CharField(max_length=10)
     description = models.CharField(max_length=50)
@@ -31,7 +31,7 @@ class Necklace(models.Model):
 
 #SMALLER TABLE + MAPPINGS#
 class Wishlist(models.Model):
-    wishlistID = models.CharField(max_length=8, unique=True)
+    wishlistID = models.AutoField(max_length=8, primary_key=True, unique=True)
     userID = models.OneToOneField(Customer, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -44,7 +44,7 @@ class Wishlist_Necklace(models.Model):
 
 
 class Cart(models.Model):
-    cartID = models.CharField(max_length=8, unique=True)
+    cartID = models.AutoField(max_length=8, primary_key=True, unique=True)
     userID = models.OneToOneField(Customer, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -58,7 +58,7 @@ class Cart_Necklace(models.Model):
 
 
 class Order(models.Model):
-    orderID = models.CharField(max_length=8, unique=True)
+    orderID = models.AutoField(max_length=8, primary_key=True, unique=True)
     userID = models.ForeignKey(Customer, on_delete=models.CASCADE)
     
     def __str__(self):
