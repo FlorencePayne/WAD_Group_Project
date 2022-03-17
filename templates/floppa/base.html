@@ -4,19 +4,26 @@
 	<head>
 		<title>
 			{% block title_block %}
-				Floppabunny
 			{% endblock %}
 		</title>
+		<meta charset="UTF-8">
+		<meta name="keywords" content="Necklace, shop, online shopping, jewlery">
 	</head>
 	<body>
-		<div>
+		<div class="header">
+			<ul>
+				<li><a href="{% url 'floppa:index' %}">Home</a></li>
+				<li>floppabunny</li>
+				<li><a href="{% url 'floppa:cart' %}">Cart</a></li>
+			</ul>
+		</div>
+		<div class="body">
 		{% block body_block %}
 		{% endblock %}
 		</div>
-		<div>
+		<div class="footer">
 			<ul>
-			<li><a href="{% url 'floppa:index' %}">Index</a></li>
-			<li><a href="{% url 'floppa:about' %}">About</a></li>
+				<li><a href="{% url 'floppa:about' %}">About Us</a></li>
 			</ul>
 		</div>
 	</body>
