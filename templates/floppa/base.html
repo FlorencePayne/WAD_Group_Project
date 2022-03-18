@@ -14,7 +14,13 @@
 			<ul>
 				<li><a href="{% url 'floppa:index' %}">Home</a></li>
 				<li>floppabunny</li>
-				<li><a href="{% url 'floppa:cart' %}">Cart</a></li>
+				{% if user.signedin %}
+					<li><a href="{% url 'floppa:cart' %}">Cart</a></li>
+					<li><a href="{% url 'floppa:account' %}">Account</a></li>
+				{% else %}
+					<li><a href="{% url 'floppa:signin' %}">Sign In</a></li>
+					<li><a href="{% url 'floppa:signup' %}">Sign Up</a></li>
+				{% endif %}
 			</ul>
 		</div>
 		<div class="body">
