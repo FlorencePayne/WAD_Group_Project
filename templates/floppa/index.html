@@ -6,8 +6,10 @@
 {% endblock %}
 
 {% block body_block %}
-	<h1>Welcome to Floppabunny</h1>
-	<img src="{% static 'images/floppabunny.jpg' %}"
-		 alt="Picture of floppabunny"/> 
-	<a href="{% url floppa:necklaces %}">necklaces</a>
+	<h1>
+		Howdy! Welcome to Floppabunny!
+        </h1>
+	<img src = "{% static 'images/floppabunny.jpg' %}"
+	     alt = "Picture of floppabunny"/> 
+	<a href = "{% url floppa:necklaces %}"> Necklaces </a>
 {% endblock %}

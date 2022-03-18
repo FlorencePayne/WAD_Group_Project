@@ -20,5 +20,3 @@ Website Tasks:
 2) Backend Team: Parsa Tavakoli and Florence Payne: Usee Authentication, Unit Testing, Models, Javascript, AJAX. 
 
 Note: All tasks are split within each sub-group created (Frontend Team and Backend Team) where we all coordinate who will do what, when, where, etc.
-
-(Testing git pull command)
