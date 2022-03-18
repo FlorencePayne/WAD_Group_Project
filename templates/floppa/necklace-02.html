@@ -1,0 +1,23 @@
+{% extends 'floppa/base.html' %}
+{% load static %}
+
+{% block title_block %}
+	Necklace 02
+{% endblock %}
+
+{% block body_block %}
+	<h1>Necklace 02</h1>
+	<img src="{% static 'images/necklace-02.jpg' %}" alt="Necklace 02">
+	<p>Sample text</p>
+	<div class="dropdown">
+		<button>Quantity</button>
+		<div class="dropdown-num">
+		  <a href="#">1</a>
+		  <a href="#">2</a>
+		  <a href="#">3</a>
+		  <a href="#">4</a>
+		</div>
+	  </div> 
+	<button>Add to Cart</button>
+	<!--Both the dropdwon menu and button will need backend functionality added-->
+{% endblock %}
