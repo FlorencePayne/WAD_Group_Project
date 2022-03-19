@@ -13,79 +13,79 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.CreateModel(
-            name='Cart',
-            fields=[
-                ('cartID', models.AutoField(max_length=8, primary_key=True, serialize=False, unique=True)),
+            name = 'Cart',
+            fields = [
+                ('cartID', models.AutoField(max_length = 8, primary_key = True, serialize = False, unique = True)),
             ],
         ),
         migrations.CreateModel(
-            name='Customer',
-            fields=[
-                ('userID', models.AutoField(max_length=8, primary_key=True, serialize=False, unique=True)),
-                ('username', models.CharField(max_length=20, unique=True)),
-                ('password', models.CharField(max_length=20)),
-                ('email', models.CharField(max_length=40, unique=True)),
-                ('firstname', models.CharField(max_length=20)),
-                ('surname', models.CharField(max_length=20)),
-                ('address1', models.CharField(max_length=20)),
-                ('address2', models.CharField(max_length=20)),
-                ('postcode', models.CharField(max_length=20)),
+            name = 'Customer',
+            fields = [
+                ('userID', models.AutoField(max_length = 8, primary_key = True, serialize = False, unique = True)),
+                ('username', models.CharField(max_length = 20, unique = True)),
+                ('password', models.CharField(max_length = 20)),
+                ('email', models.CharField(max_length = 40, unique = True)),
+                ('firstname', models.CharField(max_length = 20)),
+                ('surname', models.CharField(max_length = 20)),
+                ('address1', models.CharField(max_length = 20)),
+                ('address2', models.CharField(max_length = 20)),
+                ('postcode', models.CharField(max_length = 20)),
             ],
         ),
         migrations.CreateModel(
-            name='Necklace',
-            fields=[
-                ('necklaceID', models.AutoField(max_length=8, primary_key=True, serialize=False, unique=True)),
-                ('name', models.CharField(max_length=20)),
-                ('colour', models.CharField(max_length=10)),
-                ('description', models.CharField(max_length=50)),
-                ('price', models.CharField(max_length=4)),
+            name = 'Necklace',
+            fields = [
+                ('necklaceID', models.AutoField(max_length = 8, primary_key = True, serialize = False, unique = True)),
+                ('name', models.CharField(max_length = 20)),
+                ('colour', models.CharField(max_length = 10)),
+                ('description', models.CharField(max_length = 50)),
+                ('price', models.CharField(max_length = 4)),
                 ('stock', models.IntegerField()),
             ],
         ),
         migrations.CreateModel(
-            name='Order',
-            fields=[
-                ('orderID', models.AutoField(max_length=8, primary_key=True, serialize=False, unique=True)),
-                ('userID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='floppa.Customer')),
+            name = 'Order',
+            fields = [
+                ('orderID', models.AutoField(max_length = 8, primary_key = True, serialize = False, unique = True)),
+                ('userID', models.ForeignKey(on_delete = django.db.models.deletion.CASCADE, to = 'floppa.Customer')),
             ],
         ),
         migrations.CreateModel(
-            name='Wishlist',
-            fields=[
-                ('wishlistID', models.AutoField(max_length=8, primary_key=True, serialize=False, unique=True)),
-                ('userID', models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='floppa.Customer')),
+            name = 'Wishlist',
+            fields = [
+                ('wishlistID', models.AutoField(max_length = 8, primary_key = True, serialize = False, unique = True)),
+                ('userID', models.OneToOneField(on_delete = django.db.models.deletion.CASCADE, to = 'floppa.Customer')),
             ],
         ),
         migrations.CreateModel(
-            name='Wishlist_Necklace',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('necklaceID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='floppa.Necklace')),
-                ('wishlistID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='floppa.Wishlist')),
+            name = 'Wishlist_Necklace',
+            fields = [
+                ('id', models.AutoField(auto_created = True, primary_key = True, serialize = False, verbose_name = 'ID')),
+                ('necklaceID', models.ForeignKey(on_delete = django.db.models.deletion.CASCADE, to = 'floppa.Necklace')),
+                ('wishlistID', models.ForeignKey(on_delete = django.db.models.deletion.CASCADE, to = 'floppa.Wishlist')),
             ],
         ),
         migrations.CreateModel(
-            name='Order_Necklace',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+            name = 'Order_Necklace',
+            fields = [
+                ('id', models.AutoField(auto_created = True, primary_key = True, serialize = False, verbose_name = 'ID')),
                 ('quantity', models.IntegerField()),
-                ('necklaceID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='floppa.Necklace')),
-                ('orderID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='floppa.Order')),
+                ('necklaceID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to = 'floppa.Necklace')),
+                ('orderID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to = 'floppa.Order')),
             ],
         ),
         migrations.CreateModel(
-            name='Cart_Necklace',
-            fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
+            name = 'Cart_Necklace',
+            fields = [
+                ('id', models.AutoField(auto_created = True, primary_key = True, serialize = False, verbose_name = 'ID')),
                 ('quantity', models.IntegerField()),
-                ('cartID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='floppa.Cart')),
-                ('necklaceID', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='floppa.Necklace')),
+                ('cartID', models.ForeignKey(on_delete = django.db.models.deletion.CASCADE, to = 'floppa.Cart')),
+                ('necklaceID', models.ForeignKey(on_delete = django.db.models.deletion.CASCADE, to = 'floppa.Necklace')),
             ],
         ),
         migrations.AddField(
-            model_name='cart',
-            name='userID',
-            field=models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to='floppa.Customer'),
+            model_name = 'cart',
+            name = 'userID',
+            field = models.OneToOneField(on_delete=django.db.models.deletion.CASCADE, to = 'floppa.Customer'),
         ),
     ]
