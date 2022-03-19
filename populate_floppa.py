@@ -7,7 +7,7 @@ django.setup()
 from floppa.models import Customer, Necklace, Wishlist, Cart, Order
 
 def populate():
-    
+
     customers = [
         {'username': 'customer1',
         'password':'123password',
@@ -37,7 +37,6 @@ def populate():
         'postcode': 'G12 8QE'
         }]
 
-        
     necklaces = [
         {'name': 'necklace1',
         'color':'blue',
@@ -57,17 +56,14 @@ def populate():
         'price': '£14',
         'stock': 6,
         }]
-                
- 
+
     for customer_data in customers:
         add_customer(customer_data)
-        
-        
+ 
     #for c in Category.objects.all():
         #for p in Page.objects.filter(category=c):
             #print(f'- {c}: {p}')
-            
-            
+ 
 def add_customer(customer_data):
     cust = Customer.objects.create(username = customer_data['username'])[0]
     cust.password= customer_data['password']
@@ -78,8 +74,7 @@ def add_customer(customer_data):
     cust.address2 = customer_data['address2']
     cust.postcode = customer_data['postcode']
     cust.save()
-    
-    
+
 if __name__ == '__main__':
     print('Initiating Floppabunny population script...')
     populate()
