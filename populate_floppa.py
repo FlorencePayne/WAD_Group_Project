@@ -30,23 +30,22 @@ def populate():
 
         
     necklaces = [
-        {'name': 'necklaces1',
-        'color':'blue',
+        {'name': 'necklace1',
+        'colour':'blue',
         'description': 'pretty blue necklace',
         'price': '£10',
         'stock': 5,
         },
-        {'name': 'necklaces2',
-        'color':'red',
+        {'name': 'necklace2',
+        'colour':'red',
         'description': 'cooler red necklace',
         'price': '£12',
         'stock': 3,
         }]
                 
  
-    for customer_data in customers:
-        
-        add_customer(customer_data)
+    for necklace_data in necklaces:
+        add_necklace(necklace_data)
         
         
  
@@ -57,6 +56,7 @@ def populate():
 
 def add_customer(customer_data):
     cust = Customer.objects.create(username = customer_data['username'])[0]
+    print(customer_data['password'])
     cust.password= customer_data['password']
     cust.email = customer_data['email']
     cust.firstname = customer_data['firstname']
@@ -65,6 +65,14 @@ def add_customer(customer_data):
     cust.address2 = customer_data['address2']
     cust.postcode = customer_data['postcode']
     cust.save()
+    
+def add_necklace(necklace_data):
+    neck = Necklace.objects.get_or_create(name = necklace_data['name'])[0]
+    neck.colour = necklace_data['colour']
+    neck.description = necklace_data['description']
+    neck.price = necklace_data['price']
+    neck.stock = necklace_data['stock']
+    neck.save()
 
     
 if __name__ == '__main__':

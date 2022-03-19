@@ -1,29 +1,25 @@
 from django.db import models
+from django.contrib.auth.models import User
+
 
 #LARGE TABLES#
 class Customer(models.Model):
-    userID = models.AutoField(max_length=8, primary_key=True, unique=True)
-    username = models.CharField(max_length=20, unique=True)
-    password = models.CharField(max_length=20)
-    email = models.CharField(max_length=40, unique=True)
-    firstname = models.CharField(max_length=20)
-    surname = models.CharField(max_length=20)
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     address1 = models.CharField(max_length=20)
     address2 = models.CharField(max_length=20)
     postcode = models.CharField(max_length=20)
     
     def __str__(self):
-        return self.username
+        return self.user.username
+
 
 class Necklace(models.Model):
-    necklaceID = models.AutoField(max_length=8, primary_key=True, unique=True)
     name = models.CharField(max_length=20)
     colour = models.CharField(max_length=10)
     description = models.CharField(max_length=50)
     price = models.CharField(max_length=4)
-    stock = models.IntegerField()
-
-    
+    stock = models.IntegerField(default = 0)
+ 
     def __str__(self):
         return self.name
 
@@ -31,7 +27,6 @@ class Necklace(models.Model):
 
 #SMALLER TABLE + MAPPINGS#
 class Wishlist(models.Model):
-    wishlistID = models.AutoField(max_length=8, primary_key=True, unique=True)
     userID = models.OneToOneField(Customer, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -44,7 +39,6 @@ class Wishlist_Necklace(models.Model):
 
 
 class Cart(models.Model):
-    cartID = models.AutoField(max_length=8, primary_key=True, unique=True)
     userID = models.OneToOneField(Customer, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -53,12 +47,11 @@ class Cart(models.Model):
 class Cart_Necklace(models.Model):
     cartID = models.ForeignKey(Cart, on_delete=models.CASCADE)
     necklaceID = models.ForeignKey(Necklace, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
+    quantity = models.IntegerField(default = 0)
 
 
 
 class Order(models.Model):
-    orderID = models.AutoField(max_length=8, primary_key=True, unique=True)
     userID = models.ForeignKey(Customer, on_delete=models.CASCADE)
     
     def __str__(self):
@@ -67,5 +60,5 @@ class Order(models.Model):
 class Order_Necklace(models.Model):
     orderID = models.ForeignKey(Order, on_delete=models.CASCADE)
     necklaceID = models.ForeignKey(Necklace, on_delete=models.CASCADE)
-    quantity = models.IntegerField()
+    quantity = models.IntegerField(default = 0)
     

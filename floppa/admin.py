@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from floppa.models import *
 
 admin.site.register(Customer)
