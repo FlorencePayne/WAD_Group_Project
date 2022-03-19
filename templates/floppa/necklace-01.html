@@ -6,18 +6,26 @@
 {% endblock %}
 
 {% block body_block %}
-	<h1>Necklace 01</h1>
-	<img src="{% static 'images/necklace-01.jpg' %}" alt="Necklace 01">
-	<p>Sample text</p>
-	<div class="dropdown">
-		<button>Quantity</button>
-		<div class="dropdown-num">
-		  <a href="#">1</a>
-		  <a href="#">2</a>
-		  <a href="#">3</a>
-		  <a href="#">4</a>
+	<h1>
+		Necklace 01
+        </h1>
+	<img src = "{% static 'images/necklace-01.jpg' %}" alt = "Necklace 1">
+	<p> Description </p>
+	<div class = "dropdown">
+		<button>
+			Quantity
+		</button>
+		<div class = "dropdown-num">
+		  <a href = "#"> 1 </a>
+		  <a href = "#"> 2 </a>
+		  <a href = "#"> 3 </a>
+		  <a href = "#"> 4 </a>
 		</div>
 	  </div> 
-	<button>Add to Cart</button>
-	<!--Both the dropdwon menu and button will need backend functionality added-->
+	<button>
+		Add to Cart
+        </button>
+
+	<!-- Both the dropdwon menu and button will need backend functionality added. -->
+
 {% endblock %}
