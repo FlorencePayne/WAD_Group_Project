@@ -1,8 +1,6 @@
 # WAD_Group_Project
 WADLab08GroupB Project Repository - Floppabunny
 
-Hello everyone! Please get this repository cloned and or forked into a suitable location (your GitHub profile or local computer) and set up a Conda workspace for it.
-
 Names:
 Bader Alabdullah, Chloe Greenhill, Jacob Ferguson, Parsa Tavakoli and Florence Payne.
 
