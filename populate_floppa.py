@@ -26,35 +26,48 @@ def populate():
         'address1': '21',
         'address2': 'House Street',
         'postcode': 'G12 8QW'
+        }
+        {'username': 'customer3',
+        'password':'123password',
+        'email': 'customer3@gmail.com',
+        'firstname': 'Cust',
+        'surname': 'Omer3',
+        'address1': '22',
+        'address2': 'House Street',
+        'postcode': 'G12 8QE'
         }]
 
         
     necklaces = [
-        {'name': 'necklaces1',
+        {'name': 'necklace1',
         'color':'blue',
-        'description': 'pretty blue necklace',
+        'description': 'oceanic blue necklace',
         'price': '£10',
         'stock': 5,
         },
-        {'name': 'necklaces2',
+        {'name': 'necklace2',
         'color':'red',
-        'description': 'cooler red necklace',
+        'description': 'ruby red necklace',
         'price': '£12',
         'stock': 3,
+        }
+        {'name': 'necklace3',
+        'color':'green',
+        'description': 'emerald green necklace',
+        'price': '£14',
+        'stock': 6,
         }]
                 
  
     for customer_data in customers:
-        
         add_customer(customer_data)
         
         
- 
     #for c in Category.objects.all():
         #for p in Page.objects.filter(category=c):
             #print(f'- {c}: {p}')
             
-
+            
 def add_customer(customer_data):
     cust = Customer.objects.create(username = customer_data['username'])[0]
     cust.password= customer_data['password']
@@ -65,8 +78,8 @@ def add_customer(customer_data):
     cust.address2 = customer_data['address2']
     cust.postcode = customer_data['postcode']
     cust.save()
-
+    
     
 if __name__ == '__main__':
-    print('Starting Floppa population script...')
+    print('Initiating Floppabunny population script...')
     populate()
