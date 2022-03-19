@@ -6,19 +6,23 @@
 {% endblock %}
 
 {% block body_block %}
-	<h1>Necklaces</h1>
-    <div class="store">
-        <input type="text" placeholder="Search..." name="serachbar">
+	<h1>
+		Necklaces
+        </h1>
+    <div class = "store">
+        <input type = "text" placeholder = "Search..." name = "serachbar">
         <dl>
-            <dt><a href="default.asp">
-            <img src="{% static 'images/necklace-01.jpg' %}" alt="Necklace 1"></a></dt>
-            <dd>Necklace 1</dd>
-            <dt><a href="default.asp">
-            <img src="{% static 'images/necklace-02.jpg' %}" alt="Necklace 2"></a></dt>
-            <dd>Necklace 2</dd>
-            <dt><a href="{% url floppa:necklace03 %}">
-            <img src="{% static 'images/necklace-03.jpg' %}" alt="Necklace 3"></a></dt>
-            <dd>Necklace 3</dd>
+            <dt> <a href = "default.asp">
+            <img src = "{% static 'images/necklace-01.jpg' %}"
+		 alt = "Necklace 1">
+		  </a> </dt>
+            <dd> Necklace 1 </dd>
+            <dt> <a href = "default.asp">
+            <img src = "{% static 'images/necklace-02.jpg' %}" alt = "Necklace 2"> </a> </dt>
+            <dd> Necklace 2 </dd>
+            <dt> <a href="{% url floppa:necklace03 %}">
+            <img src = "{% static 'images/necklace-03.jpg' %}" alt = "Necklace 3"> </a> </dt>
+            <dd> Necklace 3 </dd>
         </dl>
     </div>
 {% endblock %}
