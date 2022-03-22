@@ -18,7 +18,7 @@
 					<li> <a href = "{% url 'floppa:cart' %}"> Cart </a> </li>
 					<li> <a href = "{% url 'floppa:account' %}"> Account </a> </li>
 				{% else %}
-					<li> <a href = "{% url 'floppa:signin' %}"> Sign In </a> </li>
+					<li> <a href = "{% url 'floppa:login' %}"> Log In </a> </li>
 					<li> <a href = "{% url 'floppa:signup' %}"> Sign Up </a> </li>
 				{% endif %}
 			</ul>
@@ -35,5 +35,6 @@
 		
 		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script>
 		<script src="{% static "js/floppa-jquery.js" %}" crossorigin="anonymous"></script>
+		
 	</body>
 </html>

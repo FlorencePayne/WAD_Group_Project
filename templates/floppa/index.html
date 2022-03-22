@@ -2,13 +2,17 @@
 {% load static %}
 
 {% block title_block %}
-	Home
+	₍⑅ᐢ.ˬ.ᐢ₎♡⚟HOME
 {% endblock %}
 
 {% block body_block %}
 	<h1>Welcome to Floppabunny</h1>
 	<img src="{% static 'images/floppabunny.jpg' %}"
 		 alt="Picture of floppabunny"> 
-	<button>Necklaces</button>
+	<button class="btn btn-primary" onclick="alert('This worked!');">
+		necklaces inline
+	</button>
+	<input id="necklace-button" type="button" value="necklaces static"/>
 	<!--JS needed for button to link to the necklace page-->
+	
 {% endblock %}

@@ -12,11 +12,20 @@ def about(request):
 def cart(request):
     return render(request, 'floppa/cart.html')
     
+def checkout(request):
+    return render(request, 'floppa/checkout.html')
+  
+def login(request):
+    return render(request, 'floppa/login.html')
+    
 def account(request):
     return render(request, 'floppa/account.html')
-    
-def signin(request):
-    return render(request, 'floppa/signin.html')
+   
+def wishlist(request):
+    return render(request, 'floppa/wishlist.html')
     
 def signup(request):
     return render(request, 'floppa/signup.html')
+    
+def necklaces(request):
+    return render(request, 'floppa/necklaces.html'),
