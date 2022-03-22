@@ -6,6 +6,7 @@
 			{% block title_block %}
 			{% endblock %}
 		</title>
+		<link rel="stylesheet" href="{% static 'base.css' %}"/>
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewlery">
 	</head>
@@ -13,7 +14,7 @@
 		<div class = "header">
 			<ul>
 				<li> <a href = "{% url 'floppa:index' %}"> Home </a> </li>
-				<li> Floppabunny </li>
+				<li> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250px/> </li>
 				{% if user.signedin %}
 					<li> <a href = "{% url 'floppa:cart' %}"> Cart </a> </li>
 					<li> <a href = "{% url 'floppa:account' %}"> Account </a> </li>
