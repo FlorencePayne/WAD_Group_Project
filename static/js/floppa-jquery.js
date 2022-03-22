@@ -1,6 +1,6 @@
-$(document).ready(function()){
+$(document).ready(function(){
 	
-	$('#index-btn').click(function()){
-		alert('This ran!');
+	$('#index-necklace-btn').click(function(){
+		window.location.href='floppa/necklaces/';
 	});
 });

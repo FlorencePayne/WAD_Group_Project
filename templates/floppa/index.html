@@ -9,10 +9,14 @@
 	<h1>Welcome to Floppabunny</h1>
 	<img src="{% static 'images/floppabunny.jpg' %}"
 		 alt="Picture of floppabunny"> 
-	<button class="btn btn-primary" onclick="alert('This worked!');">
-		necklaces inline
+	<button class="btn btn-primary" onclick="window.location.href='floppa/necklaces/';">
+		necklaces
 	</button>
-	<input id="necklace-button" type="button" value="necklaces static"/>
-	<!--JS needed for button to link to the necklace page-->
+	
+	<button class="btn btn-primary" id="index-necklace-btn">
+		necklaces NOT INLINE
+	</button>
+
 	
 {% endblock %}
+
