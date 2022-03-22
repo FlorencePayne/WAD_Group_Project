@@ -55,9 +55,14 @@ def populate():
             
 
 def add_customer(customer_data):
+<<<<<<< Updated upstream
     cust = Customer.objects.create(username = customer_data['username'])[0]
     print(customer_data['password'])
     cust.password= customer_data['password']
+=======
+    cust = Customer.objects.create(username = customer_data['username'], email = customer_data['email'])[0]
+    cust.password = customer_data['password']
+>>>>>>> Stashed changes
     cust.email = customer_data['email']
     cust.firstname = customer_data['firstname']
     cust.surname = customer_data['surname']

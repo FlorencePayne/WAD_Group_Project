@@ -1,10 +1,23 @@
 from django.db import models
+<<<<<<< Updated upstream
 from django.contrib.auth.models import User
 
 
 #LARGE TABLES#
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+=======
+from random import randint
+
+#LARGE TABLES#
+class Customer(models.Model):
+    userID = models.AutoField(max_length=8, primary_key=True, default= randint(0, 1000), unique=True)
+    username = models.CharField(max_length=20, unique=True)
+    password = models.CharField(max_length=20)
+    email = models.CharField(max_length=40, unique=True)
+    firstname = models.CharField(max_length=20)
+    surname = models.CharField(max_length=20)
+>>>>>>> Stashed changes
     address1 = models.CharField(max_length=20)
     address2 = models.CharField(max_length=20)
     postcode = models.CharField(max_length=20)
@@ -39,7 +52,12 @@ class Wishlist_Necklace(models.Model):
 
 
 class Cart(models.Model):
+<<<<<<< Updated upstream
     userID = models.OneToOneField(Customer, on_delete=models.CASCADE)
+=======
+    cartID = models.AutoField(max_length=8, primary_key=True, unique=True)
+    userID = models.ForeignKey(Customer, to_field="userID", db_column="userID", on_delete=models.CASCADE)
+>>>>>>> Stashed changes
     
     def __str__(self):
        return self.cartID
