@@ -1,4 +1,23 @@
 html,
 body{
 	background-color: #e6bdea;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	text-align: center;
 }
+
+.floppagif {
+    height: 50px;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+   display: block;
+
+}
+
+.contactus {
+    font-size: 16px;
+}
+
