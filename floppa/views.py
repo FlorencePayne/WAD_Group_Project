@@ -8,3 +8,15 @@ def index(request):
 
 def about(request):
     return render(request, 'floppa/about.html')
+    
+def cart(request):
+    return render(request, 'floppa/cart.html')
+    
+def account(request):
+    return render(request, 'floppa/account.html')
+    
+def signin(request):
+    return render(request, 'floppa/signin.html')
+    
+def signup(request):
+    return render(request, 'floppa/signup.html')
