@@ -7,26 +7,20 @@
 			{% endblock %}
 		</title>
 		<link rel="stylesheet" href="{% static 'base.css' %}"/>
-		<link href='https://fonts.googleapis.com/css?family=Archivo' rel='stylesheet'>
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewlery">
 	</head>
-	<style>
-	    body {
-    font-family: 'Archivo';font-size: 22px;
-}
-	</style>
 	<body>
 		<div class = "header">
 			<ul>
-				<li> <a href = "{% url 'floppa:index' %}"> Home </a> </li>
-				<li class="floppagif"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250px/> </li>
+				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=40pts/> </a> 
+				<li> <a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 200pts /> </a></li>
 				{% if user.signedin %}
-					<li> <a href = "{% url 'floppa:cart' %}"> Cart </a> </li>
-					<li> <a href = "{% url 'floppa:account' %}"> Account </a> </li>
+					<a href = "{% url 'floppa:cart' %}"> Cart </a> 
+					<a href = "{% url 'floppa:account' %}"> Account </a> 
 				{% else %}
-					<li> <a href = "{% url 'floppa:login' %}"> Log In </a> </li>
-					<li> <a href = "{% url 'floppa:signup' %}"> Sign Up </a> </li>
+					<a href = "{% url 'floppa:login' %}"> Log In </a>
+					<a href = "{% url 'floppa:signup' %}"> Sign Up </a>
 				{% endif %}
 			</ul>
 		</div>
@@ -36,12 +30,12 @@
 		</div>
 		<div class = "footer">
 			<ul>
-				<li> <a href = "{% url 'floppa:about' %}"> About Us </a> </li>
+				
 			</ul>
 		</div>
-
+		
 		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script>
 		<script src="{% static "js/floppa-jquery.js" %}" crossorigin="anonymous"></script>
-
+		
 	</body>
 </html>
