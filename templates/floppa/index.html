@@ -26,13 +26,20 @@
 			<h1>Welcome 2 Floppabunny</h1>
 			<img src="{% static 'images/bunny.png' %}" alt = "bunny"/>
 			<br>
-			<button class="btn btn-primary" id="index-necklace-btn">
+			
+			<button class = "defaultButton" onclick="necklaceButton()">
 				necklaces
 			</button>
 		</div>
 		
 		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script>
 		<script src="{% static "js/floppa-jquery.js" %}" crossorigin="anonymous"></script>
+		
+		<script>
+			function necklaceButton(){
+				location.replace("{% url 'floppa:necklaces' %}")
+			}
+		</script>
 	</body>
 
 </html>

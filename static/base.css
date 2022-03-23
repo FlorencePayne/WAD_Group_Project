@@ -110,3 +110,9 @@ aboutText{
 	background: #67B7E6;
 }
 
+
+/* css for index page specifically */
+
+.defaultButton{
+	font-family: Archivo;
+}
