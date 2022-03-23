@@ -5,6 +5,7 @@ import django
 django.setup()
 
 from floppa.models import Customer, Necklace, Wishlist, Cart, Order
+from django.contrib.auth.models import User
 
 def populate():
     
