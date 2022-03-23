@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="{% static 'base.css' %}"/>
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewlery">
-		
+
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 		</style>
@@ -17,35 +17,36 @@
 
 	<body>
 		<div class = "header">
-		
-		<!-- this code should float right but it won't. have messed about with it but am getting nowhere with it! -->
+<!-- once user authentication is done, pls let chloe know so i can change these to buttons, florence says this doesnt work -->
 				{% if not user.signedin %}
-					<div class = "righthand_header">
-						<a href = "{% url 'floppa:account' %}"> Account </a>	
-					</div>				
+					<div class = "btnright">
+						<a href = "{% url 'floppa:account' %}"> Account </a>
+					</div>
 
-					<div class = "rightmost">
+					<div class = "btnfarright">
 						<a href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
-					</div>	
+					</div>
 				{% else %}
-					<div class = "righthand_header">
+					<div class = "btnfarright">
 						<a href = "{% url 'floppa:login' %}"> Log In </a>
-					</div>	
-					
-					<div class = "righthand_header">
-						<a href = "{% url 'floppa:signup' %}"> Sign Up </a>
-					</div>	
+					</div>
+
+				<div class = "btnright">
+						<a href = "{% url 'floppa:signup' %}">
+						<button class = "classic-btn", id = "index-aboutusbtn"> </button>
+						Sign Up </a>
+					</div>
 				{% endif %}
 		<!-- to here!!! -->
-		
+
 			<div class = "homeImage">
 				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
 			</div>
 
-			<div class = "logo">	
+			<div class = "logo">
 				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 200pts /> </a>
 			</div>
-			
+
 
 		</div>
 		<div class = "body">
@@ -54,12 +55,12 @@
 		</div>
 		<div class = "footer">
 			<ul>
-				
+
 			</ul>
 		</div>
-		
+
 		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script>
 		<script src="{% static "js/floppa-jquery.js" %}" crossorigin="anonymous"></script>
-		
+
 	</body>
 </html>
