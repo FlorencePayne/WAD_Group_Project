@@ -1,6 +1,7 @@
 from django.urls import path
 from floppa import views
 
+
 app_name = 'floppa'
 
 urlpatterns = [
@@ -14,3 +15,4 @@ urlpatterns = [
     path('necklaces/', views.necklaces, name='necklaces'),
     path('necklaces/add_necklace/', views.add_necklace, name='add_necklace'),
 ]
+

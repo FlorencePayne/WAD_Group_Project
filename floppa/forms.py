@@ -7,9 +7,9 @@ class NecklaceForm(forms.ModelForm):
     description = forms.CharField(max_length=50)
     price = forms.CharField(max_length=4)
     stock = forms.IntegerField(initial=0)
-    
+
     # inline class to provide additional information for the form
     class Meta:
         # provide association betwen ModelForm and a model
         model = Necklace
-        fields = '__all__'
+        exclude = ('slug', 'image1', 'image2',)

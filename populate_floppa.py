@@ -67,7 +67,7 @@ def add_customer(customer_data):
     cust.save()
     
 def add_necklace(necklace_data):
-    neck = Necklace.objects.get_or_create(name = necklace_data['name'])[0]
+    neck = Necklace.objects.get_or_create(name = necklace_data['name'], description = necklace_data['description'])[0]
     neck.colour = necklace_data['colour']
     neck.description = necklace_data['description']
     neck.price = necklace_data['price']
