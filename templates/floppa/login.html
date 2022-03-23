@@ -6,7 +6,8 @@
 {% endblock %}
 
 {% block body_block %}
-<h1> Login to Floppabunny </h1>
+<h4> Login down below... </h1>
+<h5> And get buying. You won't regret it. ;) <h5>
 <form id="login_form" method="post" action="{% url 'floppa:login' %}">
 	{% csrf_token %}
 	Username: <input type="text" name="username" value="" size="50" />
