@@ -9,20 +9,44 @@
 		<link rel="stylesheet" href="{% static 'base.css' %}"/>
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewlery">
+		
+		<style>
+			@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+		</style>
 	</head>
+
 	<body>
 		<div class = "header">
-			<ul>
-				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=40pts/> </a> 
-				<li> <a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 200pts /> </a></li>
-				{% if user.signedin %}
-					<a href = "{% url 'floppa:cart' %}"> Cart </a> 
-					<a href = "{% url 'floppa:account' %}"> Account </a> 
+		
+		<!-- this code should float right but it won't. have messed about with it but am getting nowhere with it! -->
+				{% if not user.signedin %}
+					<div class = "righthand_header">
+						<a href = "{% url 'floppa:account' %}"> Account </a>	
+					</div>				
+
+					<div class = "rightmost">
+						<a href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
+					</div>	
 				{% else %}
-					<a href = "{% url 'floppa:login' %}"> Log In </a>
-					<a href = "{% url 'floppa:signup' %}"> Sign Up </a>
+					<div class = "righthand_header">
+						<a href = "{% url 'floppa:login' %}"> Log In </a>
+					</div>	
+					
+					<div class = "righthand_header">
+						<a href = "{% url 'floppa:signup' %}"> Sign Up </a>
+					</div>	
 				{% endif %}
-			</ul>
+		<!-- to here!!! -->
+		
+			<div class = "homeImage">
+				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
+			</div>
+
+			<div class = "logo">	
+				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 200pts /> </a>
+			</div>
+			
+
 		</div>
 		<div class = "body">
 		{% block body_block %}
