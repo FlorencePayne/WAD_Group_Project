@@ -22,15 +22,12 @@ def login(request):
     
 def account(request):
     return render(request, 'floppa/account.html')
-   
-def wishlist(request):
-    return render(request, 'floppa/wishlist.html')
-    
+      
 def signup(request):
     return render(request, 'floppa/signup.html')
     
 def necklaces(request):
-    return render(request, 'floppa/necklaces.html'),
+    return render(request, 'floppa/necklaces.html')
     
 def add_necklace(request):
     form = NecklaceForm()
@@ -40,7 +37,7 @@ def add_necklace(request):
         
         if form.is_valid():
             form.save(commit=True)
-            return redirect('/floppa/')
+            return redirect('/floppa/necklaces')
         else:
             print(form.errors)
     return render(request, 'floppa/add_necklace.html', {'form': form})        
