@@ -2,8 +2,8 @@ html,
 
 body{
 	background-color: #e6bdea;
-	/*height: 95vh;
-	width: 95vw; */
+	height: 95vh;
+	width: 95vw;
 	text-align: center;
 	font-family: Archivo;
 	font-size: 22px;
@@ -16,6 +16,7 @@ body{
 .floppagif {
     height: 50px;
     width: 50px;
+    margin: auto;
     margin-left: auto;
     margin-right: auto;
     position: relative;
@@ -43,14 +44,14 @@ body{
 	margin-left: 90%;*/
 }
 
-rightmost{
+.rightmost{
 	/*float: right;
 	left: relative;
 	right: relative;*/
 }
 
 
-header{
+.header{
 	display: block;
 	float: center;
 	vertical-align: top;
@@ -82,9 +83,10 @@ header{
 
 }
 
-#account-loginbtn {
+#account-loginsignupbtn {
     float: center;
-    font-size: 50px;
+    font-size: 50px !important;
+    text-align: center;
 }
 
 
@@ -144,3 +146,9 @@ aboutText{
 	background: #67B7E6;
 }
 
+
+/* css for index page specifically */
+
+.defaultButton{
+	font-family: Archivo;
+}

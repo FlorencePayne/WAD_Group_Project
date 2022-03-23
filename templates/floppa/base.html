@@ -17,24 +17,23 @@
 
 	<body>
 		<div class = "header">
-<!-- once user authentication is done, pls let chloe know so i can change these to buttons, florence says this doesnt work -->
-				{% if not user.signedin %}
-					<div class = "btnright">
+
+		<!-- this code should float right but it won't. have messed about with it but am getting nowhere with it! -->
+				{% if user.is_authenticated %}
+					<div class = "righthand_header">
 						<a href = "{% url 'floppa:account' %}"> Account </a>
 					</div>
 
-					<div class = "btnfarright">
+					<div class = "rightmost">
 						<a href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
 					</div>
 				{% else %}
-					<div class = "btnfarright">
+					<div class = "righthand_header">
 						<a href = "{% url 'floppa:login' %}"> Log In </a>
 					</div>
 
-				<div class = "btnright">
-						<a href = "{% url 'floppa:signup' %}">
-						<button class = "classic-btn", id = "index-aboutusbtn"> </button>
-						Sign Up </a>
+					<div class = "righthand_header">
+						<a href = "{% url 'floppa:signup' %}"> Sign Up </a>
 					</div>
 				{% endif %}
 		<!-- to here!!! -->
@@ -47,7 +46,6 @@
 				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 200pts /> </a>
 			</div>
 
-
 		</div>
 		<div class = "body">
 		{% block body_block %}
@@ -55,7 +53,9 @@
 		</div>
 		<div class = "footer">
 			<ul>
-
+			{% if user.is_authenticated %}
+			<a href="{% url 'floppa:signout' %}">Logout</a>
+			{% endif %}
 			</ul>
 		</div>
 
