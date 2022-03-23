@@ -9,28 +9,38 @@
 		<link rel="stylesheet" href="{% static 'base.css' %}"/>
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewellery">
-		
+
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 		</style>
 	</head>
-	
+
 	<body>
 		<div class = "indexHeader">
 			<ul>
-			<!-- add links -->
-				<a href = "{% url 'floppa:about' %}"> About Us </a>
+                <!-- about us button leading to about us page -->
+				<a href = "{% url 'floppa:about' %}">
+				<button class = "classic-btn", id = "index-aboutusbtn"> about us</button>
+				</a>
+				<!-- sign up button leading to sign up page -->
+			    <a href = "{% url 'floppa:signup' %}">
+			         <button class = "classic-btn", id = "index-signupbtn" = > sign up</button>
+			    </a>
+			    <!-- log in button leading to log in page -->
+			    <a href = "{% url 'floppa:login' %}">
+			    <button class = "classic-btn", id ="index-loginbtn" > log in</button>
+			    </a>
 			</ul>
 		</div>
 		<div class = "body">
-			<h1>Welcome 2 Floppabunny</h1>
+			<h1>welcome 2 floppabunny</h1>
 			<img src="{% static 'images/bunny.png' %}" alt = "bunny"/>
 			<br>
-			<button class="btn btn-primary" id="index-necklace-btn">
+			<button class="classic-btn" id="index-necklacesbtn">
 				necklaces
 			</button>
 		</div>
-		
+
 		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script>
 		<script src="{% static "js/floppa-jquery.js" %}" crossorigin="anonymous"></script>
 	</body>

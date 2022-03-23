@@ -10,6 +10,7 @@ body{
 	overflow: auto;
 }
 
+/* css code for where the floppabunny gif will be on webpages*/
 
 .floppagif {
     height: 50px;
@@ -22,6 +23,7 @@ body{
 	paddling-left: 100px;
 }
 
+.
 /* css for header */
 .homeImage {
 	float: left;
@@ -30,15 +32,15 @@ body{
 
 .logo{
 	float: center;
-}	
+}
 
-righthand_header{
+.righthand_header{
 	/*float: right;
 	width: 70%;
 	left: relative;
-	right: relative;*/
-	margin-left: 90%;
-}	
+	right: relative;
+	margin-left: 90%;*/
+}
 
 rightmost{
 	/*float: right;
@@ -46,13 +48,25 @@ rightmost{
 	right: relative;*/
 }
 
-	
+
 header{
 	display: block;
 	float: center;
 	vertical-align: top;
 }
 
+.classic-btn{
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    border: 2px solid black;
+}
+
+.classic-btn:hover {
+  background-color: black;
+  color: white;
+  border: 2px solid white;
+}
 
 /* css for text */
 
@@ -63,10 +77,10 @@ header{
 p {
 	font-size: 18px;
 	font-family: Archivo;
-	font-size: 30px;	
+	font-size: 30px;
 	font-size: 2.5vh;
 	text-align: center;
-}	
+}
 
 h1, p, h3, h4{
 	color: white;
@@ -79,7 +93,7 @@ h1 {
 h2 {
 	color: #67B7E6;
 	font-size: 4vh;
-}	
+}
 
 h3 {
 	font-size: 2.5vh;
@@ -89,7 +103,7 @@ h4 {
 	font-size: 25px;
 	font-size: 3.5vh;
 }
-	
+
 
 
 /* css for about page specifically */
