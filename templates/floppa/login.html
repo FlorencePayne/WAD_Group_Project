@@ -7,7 +7,7 @@
 
 {% block body_block %}
 <h4> Login down below... </h1>
-<h5> And get buying. You won't regret it. ;) <h5>
+<h5> And get buying. You won't regret it. ;) </h5>
 <form id="login_form" method="post" action="{% url 'floppa:login' %}">
 	{% csrf_token %}
 	Username: <input type="text" name="username" value="" size="50" />
