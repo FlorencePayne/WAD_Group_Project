@@ -13,4 +13,5 @@ urlpatterns = [
     path('login/account/wishlist', views.wishlist, name='wishlist'),
     path('signup/', views.signup, name='signup'),
     path('necklaces/', views.necklaces, name='necklaces'),
+    path('necklaces/add_necklace/', views.add_necklace, name='add_necklace'),
 ]

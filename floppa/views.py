@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from floppa.forms import NecklaceForm
+from django.shortcuts import redirect
 
 from django.shortcuts import render
 def index(request):
@@ -29,3 +31,16 @@ def signup(request):
     
 def necklaces(request):
     return render(request, 'floppa/necklaces.html'),
+    
+def add_necklace(request):
+    form = NecklaceForm()
+    
+    if request.method == 'POST':
+        form = NecklaceForm(request.POST)
+        
+        if form.is_valid():
+            form.save(commit=True)
+            return redirect('/floppa/')
+        else:
+            print(form.errors)
+    return render(request, 'floppa/add_necklace.html', {'form': form})        

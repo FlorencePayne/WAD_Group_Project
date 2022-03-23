@@ -5,6 +5,4 @@ $(document).ready(function(){
 	});
 });
 
-::-webkit-scrollbar {
-	width: 10px;
-}
+
