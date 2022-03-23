@@ -1,7 +1,7 @@
 $(document).ready(function(){
 	
 	$('#index-necklace-btn').click(function(){
-		window.location.href='floppa/necklaces/';
+		window.location.href='/floppa/necklaces/';
 	});
 });
 
