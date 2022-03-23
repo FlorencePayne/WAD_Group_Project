@@ -4,7 +4,7 @@ from django.contrib.auth.models import User
 
 
 class NecklaceForm(forms.ModelForm):
-    name = forms.CharField(max_length=20, help_text="Please enter the necklace name!")
+    name = forms.CharField(max_length=20)
     colour = forms.CharField(max_length=10)
     description = forms.CharField(max_length=50)
     price = forms.CharField(max_length=4)

@@ -3,6 +3,10 @@ from django.http import HttpResponse
 from floppa.forms import NecklaceForm,UserForm, UserProfileForm
 from django.shortcuts import redirect
 from floppa.forms import UserForm, UserProfileForm
+from django.urls import reverse
+from django.contrib.auth import authenticate, login, logout
+from django.contrib.auth.decorators import login_required
+
 
 from django.shortcuts import render
 def index(request):
@@ -18,8 +22,26 @@ def cart(request):
 def checkout(request):
     return render(request, 'floppa/checkout.html')
   
-def login(request):
-    return render(request, 'floppa/login.html')
+def signin(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(username=username, password=password)
+
+        if user:
+        
+            if user.is_active:
+                login(request, user)
+                return redirect(reverse('floppa:index'))
+            else:
+                return HttpResponse("Your Floppabunny account is disabled.")
+                
+        else:
+            print(f"Invalid login details: {username}, {password}")
+            return HttpResponse("Invalid login details supplied.")
+            
+    else:
+        return render(request, 'floppa/login.html')
     
 def account(request):
     return render(request, 'floppa/account.html')
@@ -52,6 +74,12 @@ def signup(request):
     return render(request, 'floppa/signup.html', context = {'user_form': user_form,
                                                             'profile_form': profile_form,
                                                                 'registered': registered})
+
+#can only logout if you're logged in
+@login_required
+def signout(request):
+    logout(request)
+    return redirect(reverse('floppa:index'))
     
 def necklaces(request):
     return render(request, 'floppa/necklaces.html')

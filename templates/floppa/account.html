@@ -6,5 +6,7 @@
 {% endblock %}
 
 {% block body_block %}
-	<a href = "{% url 'floppa:login' %}"> Login </a><br>
+	{% if user.is_authenticated %}
+		<p> You're Logged in </p>
+	{% endif %}
 {% endblock %}
