@@ -11,38 +11,39 @@ body{
 
 }
 
-footer{
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-	background: #C1C1C1;
-	color: black;
-	text-align: right;
-}
-
 /* css code for where the floppabunny gif will be on webpages*/
-
+.index-media {
+    float:center;
+    padding-bottom: 5vw;
+}
 .floppagif {
     height: 50px;
     width: 50px;
     margin: auto;
     margin-left: auto;
     margin-right: auto;
-    position: relative;
+
+    position: fixed;
     display: block;
-	top: -60px;
+    float: center;
+	/*top: -60px;*/
 	paddling-left: 100px;
 }
 
 .
 /* css for header */
 .homeImage {
-	float: left;
-	margin-left: 100 pts;
+	/*float: left;
+	margin-left: 100 pts;*/
+	 display: flex;
+    justify-content: center;
+
 }
 
 .logo{
 	float: center;
+	justify-content:center;
+
 }
 
 .righthand_header{
@@ -69,35 +70,66 @@ footer{
     background: gray;
     color: white;
     font-size: 16px;
+
+}
+
+#homepageBunnyLogo {
+
+
 }
 
 
 
-.classic-btn{
+
+/* buttons appearance properties*/
+.index-btn{
     background-color: white;
     color: black;
     font-size: 36px;
     border: 6px solid black;
 }
-
-.classic-btn:hover {
+/*editing buttons appearance when hovered over */
+.index-btn:hover {
   background-color: black;
   color: white;
   border: 6px solid white;
 }
 
+.classic-btn {
+    padding: 10px 16px;
+    background-color: white;
+    color: black;
+    font-size: 24px;
+    border: 3px solid black;
+    padding: 8px 16px;
+}
 
+.classic-btn:hover {
+    background-color: black;
+    color:white;
+    border:3px solid white;
+}
+
+/* buttons positoning */
 #btnleft {
     float:left;
 }
 
 #btnright {
+    margin-left: 1vw;
     float:right;
+    /*float:right;
+    margin-right:3vw;*/
 }
 
 #btnfarright {
+    margin-left: 3vw;
     float:right;
 
+}
+
+.logout-btn{
+    background-color: log ;
 }
 
 #account-loginsignupbtn {
