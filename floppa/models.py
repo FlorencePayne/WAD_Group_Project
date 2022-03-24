@@ -15,7 +15,7 @@ class Customer(models.Model):
 
 
 class Necklace(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=20, unique = True)
     colour = models.CharField(max_length=10)
     description = models.CharField(max_length=50)
     price = models.CharField(max_length=4)
@@ -34,39 +34,16 @@ class Necklace(models.Model):
 
 
 #SMALLER TABLE + MAPPINGS#
-class Wishlist(models.Model):
-    userID = models.OneToOneField(Customer, on_delete=models.CASCADE)
-    
-    def __str__(self):
-       return self.wishlistID
-
-class Wishlist_Necklace(models.Model):
-    wishlistID = models.ForeignKey(Wishlist, on_delete=models.CASCADE)
-    necklaceID = models.ForeignKey(Necklace, on_delete=models.CASCADE)
-    
-
-
-class Cart(models.Model):
-    userID = models.OneToOneField(Customer, on_delete=models.CASCADE)
-    
-    def __str__(self):
-       return self.cartID
-
-class Cart_Necklace(models.Model):
-    cartID = models.ForeignKey(Cart, on_delete=models.CASCADE)
-    necklaceID = models.ForeignKey(Necklace, on_delete=models.CASCADE)
-    quantity = models.IntegerField(default = 0)
-
-
-
 class Order(models.Model):
-    userID = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    userID = models.OneToOneField(Customer, on_delete=models.CASCADE)
+    placed = models.BooleanField(default = False)
     
-    def __str__(self):
-        return self.orderID
+    def __int__(self):
+       return self.id
 
 class Order_Necklace(models.Model):
     orderID = models.ForeignKey(Order, on_delete=models.CASCADE)
     necklaceID = models.ForeignKey(Necklace, on_delete=models.CASCADE)
     quantity = models.IntegerField(default = 0)
+
     
