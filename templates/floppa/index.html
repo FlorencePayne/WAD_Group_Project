@@ -18,18 +18,25 @@
 	<body class="body">
 		<div>
 			<ul>
+				
                 <!-- about us button leading to about us page -->
 				<a href = "{% url 'floppa:about' %}">
 				<button class = "index-btn", id = "btnleft"> about us</button>
 				</a>
-				<!-- sign up button leading to sign up page -->
-			    <a href = "{% url 'floppa:signup' %}">
-			         <button class = "index-btn", id = "btnright" = > sign up</button>
-			    </a>
-			    <!-- log in button leading to log in page -->
-			    <a href = "{% url 'floppa:login' %}">
-			    <button class = "index-btn", id ="btnfarright" > log in</button>
-			    </a>
+				{% if user.is_authenticated %}
+					<a href = "{% url 'floppa:signout' %}">
+					<button class = "index-btn", id ="btnfarright" > sign out</button>
+					</a>
+				{% else %}
+					<!-- sign up button leading to sign up page -->
+					<a href = "{% url 'floppa:signup' %}">
+					<button class = "index-btn", id = "btnright" = > sign up</button>
+					</a>
+					<!-- log in button leading to log in page -->
+					<a href = "{% url 'floppa:login' %}">
+					<button class = "index-btn", id ="btnfarright" > log in</button>
+					</a>
+				{% endif %}
 			</ul>
 		</div>
 		<div class = "index-media">
