@@ -55,7 +55,14 @@ body{
 	display: block;
 	float: center;
 	vertical-align: top;
+    padding: 10px;
+    text-align: center;
+    background: gray;
+    color: white;
+    font-size: 16px;
 }
+
+
 
 .classic-btn{
     background-color: white;
@@ -69,6 +76,7 @@ body{
   color: white;
   border: 6px solid white;
 }
+
 
 #btnleft {
     float:left;
