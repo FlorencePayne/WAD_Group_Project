@@ -6,6 +6,7 @@ from floppa.forms import UserForm, UserProfileForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
+from floppa.models import Necklace
 
 
 from django.shortcuts import render
@@ -85,8 +86,24 @@ def signout(request):
     return redirect(reverse('floppa:index'))
     
 def necklaces(request):
+    necklaces = Necklace.objects.all()
+    context_dict = {"necklaces":necklaces}
     return render(request, 'floppa/necklaces.html')
+
+def necklace(request, necklace_name_slug):
+    context_dict = {}
+
+    try:
+        necklace_slug = Necklace.objects.get(slug=necklace_name_slug)
+        necklace = Necklace.objects.all()
+        context_dict['necklace'] = necklace
+        context_dict['necklace_slup'] = necklace_slug
+    except Necklace.DoesNotExist:
+        context_dict['necklace'] = None
+        context_dict['necklace_slug'] = None
     
+    return render(request, 'floppa/necklace.html', context=context_dict)    
+
 def add_necklace(request):
     form = NecklaceForm()
     
