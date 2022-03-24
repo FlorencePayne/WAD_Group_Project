@@ -15,33 +15,33 @@
 		</style>
 	</head>
 
-	<body>
-		<div class = "indexHeader">
+	<body class="body">
+		<div>
 			<ul>
                 <!-- about us button leading to about us page -->
 				<a href = "{% url 'floppa:about' %}">
-				<button class = "classic-btn", id = "btnleft"> about us</button>
+				<button class = "index-btn", id = "btnleft"> about us</button>
 				</a>
 				<!-- sign up button leading to sign up page -->
 			    <a href = "{% url 'floppa:signup' %}">
-			         <button class = "classic-btn", id = "btnright" = > sign up</button>
+			         <button class = "index-btn", id = "btnright" = > sign up</button>
 			    </a>
 			    <!-- log in button leading to log in page -->
 			    <a href = "{% url 'floppa:login' %}">
-			    <button class = "classic-btn", id ="btnfarright" > log in</button>
+			    <button class = "index-btn", id ="btnfarright" > log in</button>
 			    </a>
 			</ul>
 		</div>
-		<div class = "body">
+		<div class = "index-media">
 			<h1>welcome 2 floppabunny</h1>
-			<img src="{% static 'images/bunny.png' %}" alt = "bunny"/>
+			<img class = "index-media" src="{% static 'images/bunny.png' %}" alt = "bunny"/>
 			<br>
 
-			<button class="classic-btn" id="index-necklacesbtn" onclick="necklaceButton()">
-                NECKLACES
+			<button class="index-btn" id="index-necklacesbtn" onclick="necklaceButton()">
+                necklaces
 			</button>
 		</div>
-		
+
 		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script>
 		<script src="{% static "js/floppa-jquery.js" %}" crossorigin="anonymous"></script>
 

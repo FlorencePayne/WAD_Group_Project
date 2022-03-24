@@ -7,55 +7,24 @@
 
 {% block body_block %}
 <h1>customer feedback form</h1>
-<h4>please let us know about your experience with our product and service</h4>
+<h4>give us your details! :</h4>
 <form id="contact" method="post" action="{% url 'floppa:contact' %}">
 	{% csrf_token %}
-<p>Is this the first time you are using Floppabunny's products and services?
+<p>please leave your full name and email address if you would like us to contact you regarding any questions
 </p>
-<input type="radio" name="first" value="Yes" /> Yes
-<br />
-<input type="radio" name="first" value="Yes" /> No
-<br />
-<br />
-<p>Would you recommend it to your family, friends and or colleagues?
-</p>
-<input type="radio" name="recommend" value="Yes" /> Yes
-<br />
-<input type="radio" name="recommend" value="Yes" /> No
-<br />
-<input type="radio" name="recommend" value="Yes" /> Unsure
-<br />
-<br />
-<p>Do you have any suggestions to improve our product and service? If not, if you have any questions, type it out below and we'll get back at you.
-</p>
-<input type="textarea" name="feedback" value="" size="60"/>
-<br />
-<br />
-<p>How satisfied are you with our company overall?
-</p>
-<input type="radio" name="satisfy" value="Yes" /> Very Satisfied
-<br />
-<input type="radio" name="satisfy" value="Yes" /> Satisfied
-<br />
-<input type="radio" name="satisfy" value="Yes" /> Undecided
-<br />
-<input type="radio" name="satisfy" value="Yes" /> Unsatisfied
-<br />
-<input type="radio" name="satisfy" value="Yes" /> Very Unsatisfied
-<br />
-<br />
-<p>Please leave your Full name and Email address if you would like us to contact you regarding any questions.
-</p>
-<p>Full name:
+<p>full name:
 </p>
 <input type="text" name="reply" value="" size="30"/>
 <br />
-<p>Email address:
+<p>email address:
 </p>
 <input type="text" name="reply" value="" size="30"/>
 <br />
+<p>please type in the details of your case. we'll get back at you as soon as possible!
+</p>
+<input type="textarea" name="feedback" value="" size="300"/>
 <br />
-
-	<input type="submit" value="contact" />
+<br />
+<input type="submit" value="contact" />
 </form>
 {% endblock %}

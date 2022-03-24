@@ -16,34 +16,41 @@
 	</head>
 
 	<body>
-		<div class = "header">
+		<div>
 
 		<!-- this code should float right but it won't. have messed about with it but am getting nowhere with it! -->
 				{% if user.is_authenticated %}
-					<div class = "righthand_header">
-						<a href = "{% url 'floppa:account' %}"> account </a>
+					<div class = "body">
+						<a href = "{% url 'floppa:account' %}">
+						<button class = "classic-btn", id = "btnfarright"> account</button>
+						</a>
 					</div>
 
-					<div class = "rightmost">
+					<div class = "body", id="btnright">
 						<a href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
 					</div>
 				{% else %}
-					<div class = "righthand_header">
-						<a href = "{% url 'floppa:login' %}"> log in </a>
+					<div class = "body", id="btnright">
+						<a href = "{% url 'floppa:login' %}">
+						<button class="classic-btn", id="btnright">log in</button>
+						 </a>
 					</div>
 
-					<div class = "righthand_header">
-						<a href = "{% url 'floppa:signup' %}"> sign up </a>
+					<div class = "body", id="btnfarright">
+						<a href = "{% url 'floppa:signup' %}">
+						<button class="classic-btn", id="btnfarright">sign up</button>
+						</a>
+
 					</div>
 				{% endif %}
 		<!-- to here!!! -->
 
-			<div class = "homeImage">
+			<div class = "homeImage" id="btnleft" >
 				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
 			</div>
 
 			<div class = "logo">
-				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 200pts /> </a>
+				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250pts /> </a>
 			</div>
 
 		</div>
@@ -54,14 +61,13 @@
 		<div class = "footer">
 			<ul>
 			{% if user.is_authenticated %}
-			<a href="{% url 'floppa:signout' %}">log out</a>
+			<a href="{% url 'floppa:signout' %}">
+			<button class = "classic-btn"> log out </button>
+</a>
 			{% endif %}
 			</ul>
 		</div>
-		
-		<div class = "footer">
-			aa
-		</div>
+
 
 		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script>
 		<script src="{% static "js/floppa-jquery.js" %}" crossorigin="anonymous"></script>
