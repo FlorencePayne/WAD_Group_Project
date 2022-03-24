@@ -7,34 +7,9 @@
 
 {% block body_block %}
 <h1>customer feedback form</h1>
-<h4>please let us know about your experience with our product and service</h4>
+<h4>give us your details! :</h4>
 <form id="contact" method="post" action="{% url 'floppa:contact' %}">
 	{% csrf_token %}
-<p>is this the first time you are using/purchasing floppabunny's products & services
-</p>
-<input type="radio" name="first" value="Yes" /> Yes
-<br />
-<input type="radio" name="first" value="Yes" /> No
-<br />
-<br />
-<p>How satisfied are you with our company overall?
-</p>
-<input type="radio" name="satisfy" value="Yes" /> very satisfied
-<br />
-<input type="radio" name="satisfy" value="Yes" /> satisfied
-<br />
-<input type="radio" name="satisfy" value="Yes" /> undecided
-<br />
-<input type="radio" name="satisfy" value="Yes" /> unsatisfied
-<br />
-<input type="radio" name="satisfy" value="Yes" /> very unsatisfied
-<br />
-<br />
-<p>please type in the details of your case if you have any questions, we'll get back at you as soon as possible
-</p>
-<input type="textarea" name="feedback" value="" size="100"/>
-<br />
-<br />
 <p>please leave your full name and email address if you would like us to contact you regarding any questions
 </p>
 <p>full name:
@@ -44,6 +19,10 @@
 <p>email address:
 </p>
 <input type="text" name="reply" value="" size="30"/>
+<br />
+<p>please type in the details of your case. we'll get back at you as soon as possible!
+</p>
+<input type="textarea" name="feedback" value="" size="300"/>
 <br />
 <br />
 <input type="submit" value="contact" />
