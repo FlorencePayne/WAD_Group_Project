@@ -17,6 +17,6 @@ Main webpage where all the necklaces are displayed, subpages of said necklaces a
 
 Website Tasks:
 1) Frontend Team: Bader Alabdullah, Chloe Greenhill and Jacob Ferguson: Views and URLS, Templates and CSS.
-2) Backend Team: Parsa Tavakoli and Florence Payne: Usee Authentication, Unit Testing, Models, Javascript, AJAX. 
+2) Backend Team: Parsa Tavakoli and Florence Payne: User Authentication, Unit Testing, Models, Javascript, AJAX. 
 
 Note: All tasks are split within each sub-group created (Frontend Team and Backend Team) where we all coordinate who will do what, when, where, etc.

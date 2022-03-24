@@ -11,6 +11,15 @@ body{
 
 }
 
+footer{
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background: #C1C1C1;
+	color: black;
+	text-align: right;
+}
+
 /* css code for where the floppabunny gif will be on webpages*/
 
 .floppagif {
