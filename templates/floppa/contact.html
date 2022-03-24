@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block body_block %}
-<h1>CUSTOMER FEEDBACK FORM</h1>
-<h4>Please let us know about your experience with our product and service.</h4>
-<form id="contact_form" method="post" action="{% url 'floppa:contact' %}">
+<h1>customer feedback form</h1>
+<h4>please let us know about your experience with our product and service</h4>
+<form id="contact" method="post" action="{% url 'floppa:contact' %}">
 	{% csrf_token %}
 <p>Is this the first time you are using Floppabunny's products and services?
 </p>
@@ -56,6 +56,6 @@
 <br />
 <br />
 
-	<input type="submit" value="CONTACT" />
+	<input type="submit" value="contact" />
 </form>
 {% endblock %}
