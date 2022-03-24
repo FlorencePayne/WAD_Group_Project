@@ -33,17 +33,23 @@ def populate():
 
         
     necklaces = [
-        {'name': 'necklace1',
-        'colour':'blue',
-        'description': 'pretty blue necklace',
-        'price': '£10',
+        {'name': '333',
+        'colour':'multi',
+        'description': 'This necklace was inspired by the album cover for 333 by Bladee, and features recycled chain details with butterflies, metal "3" chars, glass stars, millefiori hearts&stars and faux pearls!',
+        'price': '£18',
         'stock': 5,
         },
-        {'name': 'necklace2',
-        'colour':'red',
-        'description': 'cooler red necklace',
-        'price': '£12',
+        {'name': 'Strawberry Jelly',
+        'colour':'pink',
+        'description': 'This necklace is as sweet as jelly and ice cream on a hot Summer day ! <3 It features faux pearls, Czech glass beads and Millefiori glass heart beads!',
+        'price': '£14',
         'stock': 3,
+        },
+        {'name': 'Garden of Eden',
+        'colour':'green',
+        'description': 'This necklace was made for green loving garden fairies. It features Czech glass beads, glass stars, faux pearls, reused vintage green beads and leaf charms!',
+        'price': '£14',
+        'stock': 7,
         }]
         
     order = [
@@ -122,7 +128,7 @@ def add_order(order_data):
     
     
 def add_order_necklace(order_necklace_data):
-    neck = Necklace.objects.get(name = order_necklace_data['necklace'])
+    neck = Necklace.objects.get(name = order_necklace_data['name'])
     usermodel = User.objects.get(username = order_necklace_data['username'])
     
     cust = Customer.objects.get(user = usermodel)
