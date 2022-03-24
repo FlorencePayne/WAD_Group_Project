@@ -37,17 +37,17 @@ body{
 }
 
 .righthand_header{
-	/*float: right;
+	float: right;
 	width: 70%;
 	left: relative;
 	right: relative;
-	margin-left: 90%;*/
+	margin-left: 90%;
 }
 
 .rightmost{
-	/*float: right;
+	float: right;
 	left: relative;
-	right: relative;*/
+	right: relative;
 }
 
 
