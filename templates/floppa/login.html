@@ -6,12 +6,12 @@
 {% endblock %}
 
 {% block body_block %}
-<h1> Login to Floppabunny </h1>
+<h1> LOGIN TO FLOPPABUNNY </h1>
 <form id="login_form" method="post" action="{% url 'floppa:login' %}">
 	{% csrf_token %}
-	Username: <input type="text" name="username" value="" size="50" />
+	USERNAME: <input type="text" name="username" value="" size="50" />
 	<br />
-	Password: <input type="password" name="password" value="" size="50" />
+	PASSWORD: <input type="password" name="password" value="" size="50" />
 	<br />
 	<input type="submit" value="submit" />
 </form>
