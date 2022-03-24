@@ -9,7 +9,7 @@
 	<h1>Necklaces</h1>
     <div>
 		{% for necklace in necklaces%}
-			<img src="{{necklace.image1.url}}">
+			<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace"></a>
 			<h6>{{necklace.name}}</h6>
 		{% endfor %}
 	</div>
