@@ -7,6 +7,7 @@ app_name = 'floppa'
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
+    path('about/contact', views.contact, name='contact'),
     path('cart/', views.cart, name='cart'),
     path('cart/checkout', views.checkout, name='checkout'),
     path('login/', views.signin, name='login'),
