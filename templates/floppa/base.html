@@ -21,7 +21,7 @@
 		<!-- this code should float right but it won't. have messed about with it but am getting nowhere with it! -->
 				{% if user.is_authenticated %}
 					<div class = "righthand_header">
-						<a href = "{% url 'floppa:account' %}"> Account </a>
+						<a href = "{% url 'floppa:account' %}"> account </a>
 					</div>
 
 					<div class = "rightmost">
@@ -29,11 +29,11 @@
 					</div>
 				{% else %}
 					<div class = "righthand_header">
-						<a href = "{% url 'floppa:login' %}"> Log In </a>
+						<a href = "{% url 'floppa:login' %}"> log in </a>
 					</div>
 
 					<div class = "righthand_header">
-						<a href = "{% url 'floppa:signup' %}"> Sign Up </a>
+						<a href = "{% url 'floppa:signup' %}"> sign up </a>
 					</div>
 				{% endif %}
 		<!-- to here!!! -->
@@ -54,7 +54,7 @@
 		<div class = "footer">
 			<ul>
 			{% if user.is_authenticated %}
-			<a href="{% url 'floppa:signout' %}">Logout</a>
+			<a href="{% url 'floppa:signout' %}">log out</a>
 			{% endif %}
 			</ul>
 		</div>
