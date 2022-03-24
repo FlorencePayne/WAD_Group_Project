@@ -15,6 +15,9 @@ def index(request):
 
 def about(request):
     return render(request, 'floppa/about.html')
+
+def contact(request):
+    return render(request, 'floppa/contact.html')
     
 def cart(request):
     return render(request, 'floppa/cart.html')
