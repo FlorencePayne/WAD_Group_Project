@@ -31,7 +31,7 @@ def populate():
         'postcode': 'G12 8QW'
         }]
 
-        
+    #DATA FOR NECKLACES - the field names are pretty self explanetory    
     necklaces = [
         {'name': '333',
         'colour':'multi',
@@ -52,6 +52,7 @@ def populate():
         'stock': 7,
         }]
         
+    #This is the actual order that matches 1 to 1 with a user
     order = [
         {'username': 'customer1',
         'placed':False,
@@ -59,18 +60,20 @@ def populate():
         {'username': 'customer2',
         'placed':False,
         }]
-        
+    
+    #compound key of orderID and NecklaceID. Necklace corresponds to name in necklaces. If you change the name there please change the name here too.
+    #Same for the username. If you change it please make sure its changed in both places
     order_necklace = [
         {'username': 'customer1',
-        'necklace':'necklace1',
+        'necklace':'333',
         'quantity' : 1,
         },
         {'username': 'customer1',
-        'necklace':'necklace2',
+        'necklace':'Strawberry Jelly',
         'quantity' : 2,
         },
         {'username': 'customer2',
-        'necklace':'necklace1',
+        'necklace':'Garden of Eden',
         'quantity' : 1,
         }]
                 
@@ -118,24 +121,27 @@ def add_necklace(necklace_data):
     neck.price = necklace_data['price']
     neck.stock = necklace_data['stock']
     neck.save()
-    
+
+
+#Adds order for the customer
 def add_order(order_data):
-    usermodel = User.objects.get(username = order_data['username'])
-    cust = Customer.objects.get(user = usermodel)
-    order = Order.objects.get_or_create(userID = cust)[0]
-    order.placed = order_data['placed']
+    usermodel = User.objects.get(username = order_data['username'])  #We try to find our usermodel in the databse   
+    cust = Customer.objects.get(user = usermodel) #We match it with our Customer model.
+    order = Order.objects.get_or_create(userID = cust)[0] #Then using the userID we just found we create an order unique for the user
+    order.placed = order_data['placed'] #If they've placed the order or not
     order.save()
     
-    
+
+#POPULATING THE LINK BETWEEN ORDER AND NECKLCE TABLE    
 def add_order_necklace(order_necklace_data):
-    neck = Necklace.objects.get(name = order_necklace_data['name'])
-    usermodel = User.objects.get(username = order_necklace_data['username'])
+    neck = Necklace.objects.get(name = order_necklace_data['necklace']) #we get the necklace that the user wants
+    usermodel = User.objects.get(username = order_necklace_data['username']) #we get the data of the user that wants it
     
-    cust = Customer.objects.get(user = usermodel)
+    cust = Customer.objects.get(user = usermodel) #find the user so we can use their ID
+    order = Order.objects.get(userID = cust) #use the ID to find their order
     
-    order = Order.objects.get(userID = cust)
-    order_necklace = Order_Necklace.objects.get_or_create(orderID = order, necklaceID = neck)[0]
-    order_necklace.quantity = order_necklace_data['quantity']
+    order_necklace = Order_Necklace.objects.get_or_create(orderID = order, necklaceID = neck)[0] #get/create using the orderID and necklaceID we got above
+    order_necklace.quantity = order_necklace_data['quantity'] #quantity
     order_necklace.save()
     
 
