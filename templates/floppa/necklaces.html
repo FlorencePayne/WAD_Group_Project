@@ -13,12 +13,21 @@
 			<button type="submit">Search</button>
 		</form>
 	</div>
+	
 	<div>
 		{% for necklace in necklaces%}
-			{% if necklace.image1 %}
-				<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 150px ></a>
-			{% endif %}
-			<h6>{{necklace.price}}</h6>
+		<table>
+			<tr>
+				<td>
+				<div>	
+				{% if necklace.image1 %}
+					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 150px ></a>
+				{% endif %}
+				<h6>{{necklace.price}}</h6>
+				</div>
+				</td>
+			</tr>
+		</table>
 		{% endfor %}
 	</div>
 {% endblock %}
