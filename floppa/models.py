@@ -17,7 +17,7 @@ class Customer(models.Model):
 class Necklace(models.Model):
     name = models.CharField(max_length=20, unique = True)
     colour = models.CharField(max_length=10)
-    description = models.CharField(max_length=50)
+    description = models.CharField(max_length=200)
     price = models.CharField(max_length=4)
     stock = models.IntegerField(default = 0)
     slug = models.SlugField(unique=True)

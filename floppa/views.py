@@ -88,7 +88,7 @@ def signout(request):
 def necklaces(request):
     necklaces = Necklace.objects.all()
     context_dict = {"necklaces":necklaces}
-    return render(request, 'floppa/necklaces.html')
+    return render(request, 'floppa/necklaces.html', context=context_dict)
 
 def necklace(request, necklace_name_slug):
     context_dict = {}

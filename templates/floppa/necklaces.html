@@ -15,8 +15,10 @@
 	</div>
 	<div>
 		{% for necklace in necklaces%}
-			<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace"></a>
-			<h6>{{necklace.name}}</h6>
+			{% if necklace.image1 %}
+				<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 150px ></a>
+			{% endif %}
+			<h6>{{necklace.price}}</h6>
 		{% endfor %}
 	</div>
 {% endblock %}
