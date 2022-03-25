@@ -59,7 +59,9 @@ def populate():
         {'username': 'customer2',
         'placed':False,
         }]
-        
+
+    #compound key of orderID and NecklaceID. Necklace corresponds to name in necklaces. If you change the name there please change the name here too.
+    #Same for the username. If you change it please make sure its changed in both places    
     order_necklace = [
         {'username': 'customer1',
         'name':'333',
@@ -120,22 +122,22 @@ def add_necklace(necklace_data):
     neck.save()
     
 def add_order(order_data):
-    usermodel = User.objects.get(username = order_data['username'])
-    cust = Customer.objects.get(user = usermodel)
-    order = Order.objects.get_or_create(userID = cust)[0]
+    usermodel = User.objects.get(username = order_data['username']) #we try to find the usermodel for the user ordering
+    cust = Customer.objects.get(user = usermodel) #we match the usermodel to the cusmtomer model
+    order = Order.objects.get_or_create(userID = cust)[0] #create order using rhe UserID
     order.placed = order_data['placed']
     order.save()
     
     
 def add_order_necklace(order_necklace_data):
-    neck = Necklace.objects.get(name = order_necklace_data['name'])
-    usermodel = User.objects.get(username = order_necklace_data['username'])
+    neck = Necklace.objects.get(name = order_necklace_data['name']) #we get the necklace that the user wants
+    usermodel = User.objects.get(username = order_necklace_data['username']) #we get the data of the user that wants it
     
-    cust = Customer.objects.get(user = usermodel)
+    cust = Customer.objects.get(user = usermodel) #find the user so we can use their ID
     
-    order = Order.objects.get(userID = cust)
-    order_necklace = Order_Necklace.objects.get_or_create(orderID = order, necklaceID = neck)[0]
-    order_necklace.quantity = order_necklace_data['quantity']
+    order = Order.objects.get(userID = cust)  #use the ID to find their order
+    order_necklace = Order_Necklace.objects.get_or_create(orderID = order, necklaceID = neck)[0]  #get/create using the orderID and necklaceID we got above
+    order_necklace.quantity = order_necklace_data['quantity']  #quantity
     order_necklace.save()
     
 
