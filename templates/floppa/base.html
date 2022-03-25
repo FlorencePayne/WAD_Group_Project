@@ -9,7 +9,7 @@
 		<link rel="stylesheet" href="{% static 'base.css' %}"/>
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewlery">
-
+		<meta name="viewport" content="width=device-width, initial-scale-1.0">
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 		</style>
@@ -63,7 +63,7 @@
 			{% if user.is_authenticated %}
 			<a href="{% url 'floppa:signout' %}">
 			<button class = "classic-btn"> sign out </button>
-</a>
+			</a>
 			{% endif %}
 			</ul>
 		</div>
