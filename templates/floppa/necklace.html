@@ -2,18 +2,18 @@
 {% load static %}
 
 {% block title_block %}
-    ₍⑅ᐢ.ˬ.ᐢ₎♡✧NECKLACE
+    ₍⑅ᐢ.ˬ.ᐢ₎♡✧{{upper}}
 {% endblock %}
 
 {% block body_block %}
     <h1>{{necklace.name}}</h1>
         <div>
             {% if necklace.image1 %}
-                <img src="{{necklace.image1.url}}" alt="First image of necklace">
-                <img src="{{necklace.image2.url}}" alt="Second image of necklace">
+                <img src="{{necklace.image1.url}}" alt="First image of necklace" width=200px>
+                <img src="{{necklace.image2.url}}" alt="Second image of necklace" width=200px>
             {% else %}
-                <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 150px>
-                <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 150px>
+                <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 200px>
+                <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 200px>
             {% endif %}
             <div>
                 <p>{{necklace.description}}</p>

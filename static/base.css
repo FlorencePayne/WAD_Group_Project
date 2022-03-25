@@ -41,6 +41,8 @@ body{
 }
 
 .logo{
+	top: 0;
+	position: relative;
 	float: center;
 	justify-content:center;
 

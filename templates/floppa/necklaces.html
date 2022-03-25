@@ -23,9 +23,9 @@
 				<td>
 				<div>
 				{% if necklace.image1 %}
-					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 150px ></a>
+					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 200px ></a>
 				{% else %}
-					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 150px></a>
+					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 200px></a>
 				{% endif %}
 				<h6>{{necklace.price}}</h6>
 				</div>

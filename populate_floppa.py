@@ -35,7 +35,7 @@ def populate():
     necklaces = [
         {'name': '333',
         'colour':'multi',
-        'description': 'This necklace was inspired by the album cover for 333 by Bladee, and features recycled chain details with butterflies, metal "3" chars, glass stars, millefiori hearts&stars and faux pearls!',
+        'description': 'This necklace was inspired by the album cover for 333 by Bladee, and features recycled chain details with butterflies, metal "3" charms, glass stars, millefiori hearts&stars and faux pearls!',
         'price': '£18',
         'stock': 5,
         },

@@ -96,8 +96,11 @@ def necklace(request, necklace_name_slug):
     try:
         necklace = Necklace.objects.get(slug=necklace_name_slug)
         context_dict['necklace'] = necklace
+        upper = necklace.name.upper()
+        context_dict['upper'] = upper
     except Necklace.DoesNotExist:
         context_dict['necklace'] = None
+        context_dict['upper'] = None
     
     return render(request, 'floppa/necklace.html', context=context_dict)    
 
