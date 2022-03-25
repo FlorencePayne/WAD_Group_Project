@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from floppa.forms import NecklaceForm,UserForm, UserProfileForm
 from django.shortcuts import redirect
-from floppa.forms import UserForm, UserProfileForm
+from floppa.forms import UserForm, UserProfileForm, AddToCartForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -92,7 +92,19 @@ def necklaces(request):
 
 def necklace(request, necklace_name_slug):
     context_dict = {}
-
+    form = AddToCartForm()
+    
+    if request.method == "POST":
+        if request.user.is_authenticated:
+            form = AddToCartForm(request.POST)
+            
+        if form.is_valid():
+            cart = form.save(commit=False)
+            cart.orderID = Cart.objects.get(pk=request.user.id)
+            cart.save()
+        else:
+            print(form.errors)
+     
     try:
         necklace = Necklace.objects.get(slug=necklace_name_slug)
         context_dict['necklace'] = necklace

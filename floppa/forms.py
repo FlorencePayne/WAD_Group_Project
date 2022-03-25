@@ -1,6 +1,7 @@
 from django import forms
-from floppa.models import Necklace, Customer
+from floppa.models import Necklace, Customer, Order_Necklace
 from django.contrib.auth.models import User
+from django.contrib.auth import authenticate
 
 
 class NecklaceForm(forms.ModelForm):
@@ -28,3 +29,12 @@ class UserProfileForm(forms.ModelForm):
     class Meta:
         model = Customer
         fields = ('address1', 'address2', 'postcode',)
+
+
+class AddToCartForm(forms.ModelForm):
+    quantity = forms.IntegerField(initial=1)
+    
+    class Meta:
+        model = Order_Necklace
+        fields = ('quantity',)
+    
