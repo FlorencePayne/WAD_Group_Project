@@ -8,11 +8,16 @@
 {% block body_block %}
     <h1>{{necklace.name}}</h1>
         <div>
-            <img src="{{necklace.image1.url}}" alt="First image of necklace">
-            <img src="{{necklace.image2.url}}" alt="Second image of necklace">
+            {% if necklace.image1 %}
+                <img src="{{necklace.image1.url}}" alt="First image of necklace">
+                <img src="{{necklace.image2.url}}" alt="Second image of necklace">
+            {% else %}
+                <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 150px>
+                <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 150px>
+            {% endif %}
             <div>
-                <p>{{necklace.desription}}</p>
-                <h6>{{necklace.price|floatformat:2}}</h6>
+                <p>{{necklace.description}}</p>
+                <h6>{{necklace.price}}</h6>
                 <div class="dropdown">
                     <button class="dropbtn">Quantity</button>
                     <div class="drop-content">
@@ -22,7 +27,7 @@
                         <a href="#">4</a>
                     </div>
                 </div>
-                <a href="{{url 'floppa:cart'}}">Add to Cart</a>
+                
             </div>
-        </div>
+        </div>    
 {% endblock %}
