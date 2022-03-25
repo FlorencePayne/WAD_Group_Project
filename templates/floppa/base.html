@@ -6,7 +6,7 @@
 			{% block title_block %}
 			{% endblock %}
 		</title>
-		<link rel="stylesheet" href="{% static 'base.css' %}"/>
+		<link rel="stylesheet" href="{% static 'base.css' %}"/> <!--calling stylesheet-->
 		<link rel="stylesheet" href="{% static 'necklacestyle.css' %}"/>
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewlery">
@@ -17,12 +17,16 @@
 	</head>
 
 	<body>
+	        <div class="header"></div> <!--calling header class to be applied to every page-->
+	    <div>
+	            <!--the floppabunny logo gif on every page except from home or index.html -->
+	        				<a id ="logo" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250pts /> </a>
+        </div>
 		<div>
-
-		<!-- this code should float right but it won't. have messed about with it but am getting nowhere with it! -->
+		        <!--setting condition on what the user sees depending on if logged in or not-->
 				{% if user.is_authenticated %}
 					<div class = "body">
-						<a href = "{% url 'floppa:account' %}">
+						<a href = "{% url 'floppa:account' %}"> <!--setting up buttons to take user to corresponding page -->
 						<button class = "classic-btn", id = "btnfarright"> account</button>
 						</a>
 					</div>
@@ -48,10 +52,6 @@
 
 			<div class = "homeImage" id="btnleft" >
 				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
-			</div>
-
-			<div class = "logo">
-				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250pts /> </a>
 			</div>
 
 		</div>

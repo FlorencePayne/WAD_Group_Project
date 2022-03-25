@@ -6,13 +6,10 @@
 {% endblock %}
 
 {% block body_block %}
-<<<<<<< HEAD
 	<a href = "{% url 'floppa:login' %}">
 	<button class = "classic-btn" id="account-loginbtn"> log in </button>
 	 </a><br>
-=======
 	{% if user.is_authenticated %}
 		<p> you're logged in </p>
 	{% endif %}
->>>>>>> 35f2d054725a40a844dfc961d8134b1893207a5a
 {% endblock %}
