@@ -1,0 +1,16 @@
+html,
+
+.search-btn{
+    	background-color: transparent;
+    	height:30px;
+    	width:30px;
+        border: 0px;
+    }
+.search-btn:hover {
+    background-image: url('static/images/search button invert.png')
+    height:30px;
+    width:30px;
+}
+
+
+

@@ -10,16 +10,18 @@
     <div class="search bar">
 		<form>
 			<input type="search" placeholder="Search Necklaces">
-			<button type="submit">Search</button>
+			<button type="submit" class ="search-btn">
+			    <img class = "search-img" src="{% static 'images/search button.png' %}" alt="Click to search" width=50pts/>
+			    </button>
 		</form>
 	</div>
-	
+
 	<div>
 		{% for necklace in necklaces%}
 		<table>
 			<tr>
 				<td>
-				<div>	
+				<div>
 				{% if necklace.image1 %}
 					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 150px ></a>
 				{% else %}
