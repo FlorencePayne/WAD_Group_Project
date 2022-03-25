@@ -31,5 +31,8 @@
 			</tr>
 		</table>
 		{% endfor %}
+		{%if user.is_staff%}
+		<a href = "{% url 'floppa:add_necklace' %}"> add necklace </a>
+		{%endif%}
 	</div>
 {% endblock %}
