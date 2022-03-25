@@ -62,15 +62,15 @@ def populate():
         
     order_necklace = [
         {'username': 'customer1',
-        'necklace':'necklace1',
+        'name':'333',
         'quantity' : 1,
         },
         {'username': 'customer1',
-        'necklace':'necklace2',
+        'name':'Strawberry Jelly',
         'quantity' : 2,
         },
         {'username': 'customer2',
-        'necklace':'necklace1',
+        'name':'Garden of Eden',
         'quantity' : 1,
         }]
                 
@@ -128,7 +128,7 @@ def add_order(order_data):
     
     
 def add_order_necklace(order_necklace_data):
-    neck = Necklace.objects.get(name = order_necklace_data['necklace'])
+    neck = Necklace.objects.get(name = order_necklace_data['name'])
     usermodel = User.objects.get(username = order_necklace_data['username'])
     
     cust = Customer.objects.get(user = usermodel)
