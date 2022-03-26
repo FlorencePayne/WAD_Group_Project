@@ -9,6 +9,7 @@ body{
 	font-size: 22px;
 
 }
+
 #logo {
   position: absolute;
   z-index: -1;
@@ -19,7 +20,7 @@ body{
   bottom: 5%;
   right: 5%;
   left: 5%;
-position:relative;
+  position:relative;
 }
 
 
@@ -34,6 +35,7 @@ position:relative;
   width: 100%;
   text-align: justify;
 }
+
 /* css code for where the floppabunny gif will be on webpages*/
 .index-media {
     float:center;
@@ -67,12 +69,20 @@ position:relative;
 }
 
 /* css for header */
-.homeImage {
-	/*float: left;
-	margin-left: 100 pts;*/
+#indexBunny {
+	float: left;
+	margin-left: 100 pts;
 	 display: flex;
     justify-content: center;
-
+  position: absolute;
+  overflow: hidden;
+  height: 30%;
+  width: 35.7%;
+  top: 20%;
+  bottom: 5%;
+  right: 35%;
+  left: 35%;
+position:relative;
 }
 
 .logo{
@@ -80,13 +90,14 @@ position:relative;
 	position: relative;
 	float: center;
 	justify-content:center;
-
 }
 
 /* buttons appearance properties*/
 .index-btn{
+    border-radius: 4px;
+    float: center;
     color: black;
-    font-size: 36px;
+    font-size: 26px;
     border: 6px solid black;
 }
 /*editing buttons appearance when hovered over to boost responsiveness*/
@@ -96,13 +107,23 @@ position:relative;
   border: 6px solid white;
 }
 
+#index-necklacesbtn {
+    justify-content: center;
+    float: center;
+    text-align: center;
+    top: 20%;
+  bottom: 5%;
+  right: 40%;
+  left: 40%;
+}
+
 .classic-btn {
     border-radius: 4px;
     padding: 10px 16px;
     background-color: white;
     color: black;
     font-size: 24px;
-    border: 3px solid black;
+    border: 4.75px solid black;
     padding: 8px 16px;
 }
 
@@ -155,7 +176,7 @@ p {
   overflow: hidden;
 }
 
-/* Navbar links */
+/* Navigation bar shown on every page outwith home page (index.html) */
 .topnav a {
   float: left;
   color: #c1c1c1;
@@ -176,7 +197,7 @@ h1, p, h3, h4{
 }
 
 h1 {
-	font-size: 5vh;
+	font-size: 7vh;
 }
 
 .center {
@@ -198,12 +219,11 @@ h4 {
 }
 
 
-
-/* css for about page specifically */
-
 .index-media {
+    position: relative;
+	float: center;
+	justify-content:center;
     float:center;
-    padding-bottom: 5vw;
 }
 
 /* css for scrollbar */
