@@ -1,0 +1,16 @@
+{% extends 'floppa/base.html' %}
+{% load static %}
+
+{% block title_block %}
+    ₍⑅ᐢ.ˬ.ᐢ₎♡✧PAYMENT CONFIRMED
+{% endblock %}
+
+{% block body_block %}
+<h1>✧･ﾟ: *✧･ﾟ:*Your order is confirmed! ₍ ᐢ. ̫ .⑅ᐢ ₎*:･ﾟ✧*:･ﾟ✧</h1>
+<br>
+<p> We will get it to you asap! <3 thank you for your purchase! </p> 
+
+<a href="{% url 'floppa:index' %}">
+			<button class = "classic-btn"> back home </button>
+			</a>
+{% endblock %}

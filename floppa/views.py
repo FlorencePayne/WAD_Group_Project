@@ -19,13 +19,7 @@ def about(request):
 
 def contact(request):
     return render(request, 'floppa/contact.html')
-    
-def cart(request):
-    return render(request, 'floppa/cart.html')
-    
-def checkout(request):
-    return render(request, 'floppa/checkout.html')
-  
+     
 def signin(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -93,7 +87,7 @@ def necklaces(request):
 def necklace(request, necklace_name_slug):
     context_dict = {}
     form = AddToCartForm()
-    
+
     try:
         necklace = Necklace.objects.get(slug=necklace_name_slug)
         context_dict['necklace'] = necklace
@@ -131,7 +125,6 @@ def necklace(request, necklace_name_slug):
     return render(request, 'floppa/necklace.html', context=context_dict)    
 
 
-
 def add_necklace(request):
     form = NecklaceForm()
     
@@ -145,3 +138,50 @@ def add_necklace(request):
             print(form.errors)
             
     return render(request, 'floppa/add_necklace.html', {'form': form})        
+
+
+def cart(request):
+    context_dict = {}
+    necklacesDict = []
+    prices = []
+    records = []
+    counter = 0;
+    
+    customer = Customer.objects.get(user_id = request.user.id)
+    cart = Order.objects.get_or_create(userID_id = customer.user_id)[0]
+    cart.orderID_id = cart.id
+    necklaces = Order_Necklace.objects.filter(orderID_id = cart.orderID_id)
+    
+    for necklaceRef in necklaces:
+        necklace = Necklace.objects.get(id = necklaceRef.necklaceID_id)
+        price = int(necklace.price.replace('£', '')) * int(necklaceRef.quantity)
+        
+        necklacesDict.append(necklace)
+        prices.append(price)
+        records.append(counter)
+        counter += 1
+    
+    context_dict['necklaces'] = necklacesDict
+    context_dict['prices'] = prices
+    context_dict['records'] = records
+    return render(request, 'floppa/cart.html', context=context_dict)
+ 
+def checkout(request):
+    total = 0
+    context_dict = {}
+    
+    customer = Customer.objects.get(user_id = request.user.id)
+    cart = Order.objects.get_or_create(userID_id = customer.user_id)[0]
+    cart.orderID_id = cart.id
+    necklaces = Order_Necklace.objects.filter(orderID_id = cart.orderID_id)
+    
+    for necklaceRef in necklaces:
+        necklace = Necklace.objects.get(id = necklaceRef.necklaceID_id)
+        price = int(necklace.price.replace('£', '')) * int(necklaceRef.quantity)
+        total += price
+        
+    context_dict['total'] = total    
+    return render(request, 'floppa/checkout.html', context=context_dict)
+ 
+def payment_confirmed(request):
+    return render(request, 'floppa/paymentConfirmed.html')
