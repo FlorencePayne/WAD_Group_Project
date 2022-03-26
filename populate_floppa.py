@@ -44,18 +44,24 @@ def populate():
         'description': 'This necklace was inspired by the album cover for 333 by Bladee, and features recycled chain details with butterflies, metal "3" charms, glass stars, millefiori hearts&stars and faux pearls!',
         'price': '£18',
         'stock': 5,
+        'image1': '333image1.jpg',
+        'image2': '333image2.jpg',
         },
         {'name': 'Strawberry Jelly',
         'colour':'pink',
         'description': 'This necklace is as sweet as jelly and ice cream on a hot Summer day ! <3 It features faux pearls, Czech glass beads and Millefiori glass heart beads!',
         'price': '£14',
         'stock': 3,
+        'image1': 'strawberry_jelly_image1.jpg',
+        'image2': 'strawberry_jelly_image2.jpg',
         },
         {'name': 'Garden of Eden',
         'colour':'green',
         'description': 'This necklace was made for green loving garden fairies. It features Czech glass beads, glass stars, faux pearls, reused vintage green beads and leaf charms!',
         'price': '£14',
         'stock': 7,
+        'image1': 'garden_of_eden_image_1.jpg',
+        'image2': 'garden_of_eden_image2.jpg',
         }]
         
     order = [
@@ -127,6 +133,8 @@ def add_necklace(necklace_data):
     neck.description = necklace_data['description']
     neck.price = necklace_data['price']
     neck.stock = necklace_data['stock']
+    neck.image1 = necklace_data['image1']
+    neck.image2 = necklace_data['image2']
     neck.save()
     
 def add_order(order_data):
