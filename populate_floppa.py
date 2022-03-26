@@ -30,6 +30,12 @@ def populate():
         'address2': 'House Street',
         'postcode': 'G12 8QW'
         }]
+        
+    admin = {'username': 'floppa',
+        'password':'floppa1234',
+        'email': 'floppa@gmail.com',
+        'is_staff' : True
+        }
 
         
     necklaces = [
@@ -92,7 +98,7 @@ def populate():
     for order_necklace_data in order_necklace:
         add_order_necklace(order_necklace_data)
         
- 
+    add_admin(admin)
 
             
 #add customer script, takes in customer_data tries to find a user with the given username if it can't then it creates a new user
@@ -111,6 +117,8 @@ def add_customer(customer_data):
     cust.postcode = customer_data['postcode']
     cust.save() #dont forget to save!
     #since there's 2 different models we have to save individualy 
+
+
 
 #works similar to customer one. Take in the data, try and retrieve it if it doesn't exist create it. Enter all fields and save    
 def add_necklace(necklace_data):
@@ -140,7 +148,13 @@ def add_order_necklace(order_necklace_data):
     order_necklace.quantity = order_necklace_data['quantity']  #quantity
     order_necklace.save()
     
-
+def add_admin(admin_data):
+    usermodel = User.objects.get_or_create(username = admin_data['username'])[0]
+    usermodel.set_password(admin_data['password'])
+    usermodel.email = admin_data['email']
+    usermodel.is_staff = admin_data['is_staff']
+    usermodel.save() #dont forget to save!
+    
     
 #starts the whole thing    
 if __name__ == '__main__':
