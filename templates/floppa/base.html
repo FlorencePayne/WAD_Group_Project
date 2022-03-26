@@ -17,42 +17,43 @@
 	</head>
 
 	<body>
-	        <div class="header"></div> <!--calling header class to be applied to every page-->
-	    <div>
-	            <!--the floppabunny logo gif on every page except from home or index.html -->
-	        				<a id ="logo" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250pts /> </a>
-        </div>
+
 		<div>
 		        <!--setting condition on what the user sees depending on if logged in or not-->
 				{% if user.is_authenticated %}
-					<div class = "body">
-						<a href = "{% url 'floppa:account' %}"> <!--setting up buttons to take user to corresponding page -->
-						<button class = "classic-btn", id = "btnfarright"> account</button>
+					    <div class="topnav"> <!-- calling the class with the navigation bar styles-->
+
+	                    <a class="homeImage" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
+
+                        <a style="float:right" href = "{% url 'floppa:account' %}"> <!--setting up buttons to take user to corresponding page -->
+						<button class = "classic-btn"> account</button>
+
 						</a>
+                        <a style="float:right" href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
 					</div>
 
-					<div class = "body", id="btnright">
+					<!--<div class = "body", id="btnright">
 						<a href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
-					</div>
+					</div>-->
 				{% else %}
-					<div class = "body", id="btnright">
-						<a href = "{% url 'floppa:login' %}">
-						<button class="classic-btn", id="btnright">log in</button>
+					    <div class="topnav">
+            			<a class="homeImage" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
+
+                        <a style="float:right" href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
+                        <a style="float:right" href = "{% url 'floppa:signup' %}">
+						<button  class="classic-btn">sign up</button>
+						</a>
+						<a style="float:right" href = "{% url 'floppa:login' %}">
+                        <button class="classic-btn" >log in</button>
 						 </a>
 					</div>
-
-					<div class = "body", id="btnfarright">
-						<a href = "{% url 'floppa:signup' %}">
-						<button class="classic-btn", id="btnfarright">sign up</button>
-						</a>
-
 					</div>
 				{% endif %}
 		<!-- to here!!! -->
 
-			<div class = "homeImage" id="btnleft" >
-				<a href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
-			</div>
+            <!--the floppabunny logo gif on every page except from home or index.html -->
+            <a id ="logo" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250pts /> </a>
+
 
 		</div>
 		<div class = "body">

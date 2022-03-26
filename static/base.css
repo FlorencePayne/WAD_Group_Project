@@ -4,11 +4,9 @@ body{
 	background-color: #e6bdea;
 	height: 95vh;
 	width: 95vw;
-
 	text-align: center;
 	font-family: Archivo;
 	font-size: 22px;
-	float: center;
 
 }
 #logo {
@@ -24,36 +22,22 @@ body{
 position:relative;
 }
 
+
 .header {
   position: relative;
   background-color: #c1c1c1;
   left: 0;
   color: white;
   text-align: right;
-  height: 10%;
+  height: 5%;
   padding: 1%;
   width: 100%;
   text-align: justify;
-  -ms-text-justify: distribute-all-lines;
-  text-justify: distribute-all-lines;
 }
 /* css code for where the floppabunny gif will be on webpages*/
 .index-media {
     float:center;
     padding-bottom: 5vw;
-}
-.floppagif {
-    height: 50px;
-    width: 50px;
-    margin: auto;
-    margin-left: auto;
-    margin-right: auto;
-
-    position: fixed;
-    display: block;
-    float: center;
-	/*top: -60px;*/
-	paddling-left: 100px;
 }
 
 /* buttons positoning */
@@ -82,8 +66,6 @@ position:relative;
 
 }
 
-
-.
 /* css for header */
 .homeImage {
 	/*float: left;
@@ -103,7 +85,6 @@ position:relative;
 
 /* buttons appearance properties*/
 .index-btn{
-    background-color: white;
     color: black;
     font-size: 36px;
     border: 6px solid black;
@@ -116,6 +97,7 @@ position:relative;
 }
 
 .classic-btn {
+    border-radius: 4px;
     padding: 10px 16px;
     background-color: white;
     color: black;
@@ -156,12 +138,49 @@ p {
 	text-align: center;
 }
 
+
+/* The navbar container */
+.topnav {
+    position: relative;
+  background-color: #c1c1c1;
+  left: 0;
+  color: #c1c1c1;
+  text-align: right;
+  height: 5%;
+  padding: 1%;
+  width: 100%;
+  text-align: justify;
+	/*top: -60px;*/
+	paddling-left: 100px;
+  overflow: hidden;
+}
+
+/* Navbar links */
+.topnav a {
+  float: left;
+  color: #c1c1c1;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Links - change color on hover */
+.topnav a:hover {
+  background-color: #c1c1c1;
+  color: black;
+}
+
 h1, p, h3, h4{
 	color: white;
 }
 
 h1 {
 	font-size: 5vh;
+}
+
+.center {
+ text-align: center
 }
 
 h2 {
@@ -182,7 +201,10 @@ h4 {
 
 /* css for about page specifically */
 
-
+.index-media {
+    float:center;
+    padding-bottom: 5vw;
+}
 
 /* css for scrollbar */
 

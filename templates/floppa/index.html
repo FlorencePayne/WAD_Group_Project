@@ -18,7 +18,7 @@
 	<body class="body">
 		<div>
 			<ul>
-				
+
                 <!-- about us button leading to about us page -->
 				<a href = "{% url 'floppa:about' %}">
 				<button class = "index-btn", id = "btnleft"> about us</button>
@@ -39,11 +39,10 @@
 				{% endif %}
 			</ul>
 		</div>
-		<div class = "index-media">
+		<div >
 			<h1>welcome 2 floppabunny</h1>
 			<img class = "index-media" src="{% static 'images/bunny.png' %}" alt = "bunny"/>
-			<br>
-			
+
 			<a href="{% url 'floppa:necklaces' %}">
 			<button class="index-btn" id="index-necklacesbtn">
                 necklaces
