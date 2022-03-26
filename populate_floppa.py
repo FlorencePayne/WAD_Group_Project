@@ -30,6 +30,12 @@ def populate():
         'address2': 'House Street',
         'postcode': 'G12 8QW'
         }]
+        
+    admin = {'username': 'floppa',
+        'password':'floppa1234',
+        'email': 'floppa@gmail.com',
+        'is_staff' : True
+        }
 
         
     necklaces = [
@@ -38,18 +44,24 @@ def populate():
         'description': 'This necklace was inspired by the album cover for 333 by Bladee, and features recycled chain details with butterflies, metal "3" charms, glass stars, millefiori hearts&stars and faux pearls!',
         'price': '£18',
         'stock': 5,
+        'image1': '333image1.jpg',
+        'image2': '333image2.jpg',
         },
         {'name': 'Strawberry Jelly',
         'colour':'pink',
         'description': 'This necklace is as sweet as jelly and ice cream on a hot Summer day ! <3 It features faux pearls, Czech glass beads and Millefiori glass heart beads!',
         'price': '£14',
         'stock': 3,
+        'image1': 'strawberry_jelly_image1.jpg',
+        'image2': 'strawberry_jelly_image2.jpg',
         },
         {'name': 'Garden of Eden',
         'colour':'green',
         'description': 'This necklace was made for green loving garden fairies. It features Czech glass beads, glass stars, faux pearls, reused vintage green beads and leaf charms!',
         'price': '£14',
         'stock': 7,
+        'image1': 'garden_of_eden_image_1.jpg',
+        'image2': 'garden_of_eden_image2.jpg',
         }]
         
     order = [
@@ -92,7 +104,7 @@ def populate():
     for order_necklace_data in order_necklace:
         add_order_necklace(order_necklace_data)
         
- 
+    add_admin(admin)
 
             
 #add customer script, takes in customer_data tries to find a user with the given username if it can't then it creates a new user
@@ -112,6 +124,8 @@ def add_customer(customer_data):
     cust.save() #dont forget to save!
     #since there's 2 different models we have to save individualy 
 
+
+
 #works similar to customer one. Take in the data, try and retrieve it if it doesn't exist create it. Enter all fields and save    
 def add_necklace(necklace_data):
     neck = Necklace.objects.get_or_create(name = necklace_data['name'], description = necklace_data['description'])[0]
@@ -119,6 +133,8 @@ def add_necklace(necklace_data):
     neck.description = necklace_data['description']
     neck.price = necklace_data['price']
     neck.stock = necklace_data['stock']
+    neck.image1 = necklace_data['image1']
+    neck.image2 = necklace_data['image2']
     neck.save()
     
 def add_order(order_data):
@@ -140,7 +156,13 @@ def add_order_necklace(order_necklace_data):
     order_necklace.quantity = order_necklace_data['quantity']  #quantity
     order_necklace.save()
     
-
+def add_admin(admin_data):
+    usermodel = User.objects.get_or_create(username = admin_data['username'])[0]
+    usermodel.set_password(admin_data['password'])
+    usermodel.email = admin_data['email']
+    usermodel.is_staff = admin_data['is_staff']
+    usermodel.save() #dont forget to save!
+    
     
 #starts the whole thing    
 if __name__ == '__main__':

@@ -21,8 +21,8 @@ class Necklace(models.Model):
     price = models.CharField(max_length=4)
     stock = models.IntegerField(default = 0)
     slug = models.SlugField(unique=True)
-    image1 = models.ImageField(null=True, blank=True, max_length=255, upload_to ="necklacePictures/")
-    image2 = models.ImageField(null=True, blank=True, max_length=255, upload_to ="necklacePictures/")
+    image1 = models.ImageField(null=True, blank=True, max_length=255, upload_to ="media/")
+    image2 = models.ImageField(null=True, blank=True, max_length=255, upload_to ="media/")
  
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
