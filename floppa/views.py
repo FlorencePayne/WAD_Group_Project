@@ -94,8 +94,6 @@ def necklace(request, necklace_name_slug):
     context_dict = {}
     form = AddToCartForm()
     
-
-     
     try:
         necklace = Necklace.objects.get(slug=necklace_name_slug)
         context_dict['necklace'] = necklace
@@ -131,6 +129,8 @@ def necklace(request, necklace_name_slug):
     
     context_dict['form'] = form
     return render(request, 'floppa/necklace.html', context=context_dict)    
+
+
 
 def add_necklace(request):
     form = NecklaceForm()

@@ -33,13 +33,14 @@
 			</tr>
 		</table>
 		{% endfor %}
+		
 		{%if user.is_staff%}
 		<a href = "{% url 'floppa:add_necklace' %}">
 		<button class="classic-btn" id="necklaces-addnecklacebtn">
             add necklace
 		</button>
 		</a>
-
 		{%endif%}
+		
 	</div>
 {% endblock %}
