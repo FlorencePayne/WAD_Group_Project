@@ -6,7 +6,7 @@ from floppa.forms import UserForm, UserProfileForm, AddToCartForm
 from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
-from floppa.models import Necklace
+from floppa.models import Necklace, Order, Order_Necklace, Customer
 
 
 from django.shortcuts import render
@@ -94,16 +94,7 @@ def necklace(request, necklace_name_slug):
     context_dict = {}
     form = AddToCartForm()
     
-    if request.method == "POST":
-        if request.user.is_authenticated:
-            form = AddToCartForm(request.POST)
-            
-        if form.is_valid():
-            cart = form.save(commit=False)
-            cart.orderID = Cart.objects.get(pk=request.user.id)
-            cart.save()
-        else:
-            print(form.errors)
+
      
     try:
         necklace = Necklace.objects.get(slug=necklace_name_slug)
@@ -113,7 +104,32 @@ def necklace(request, necklace_name_slug):
     except Necklace.DoesNotExist:
         context_dict['necklace'] = None
         context_dict['upper'] = None
+        
+    if request.method == "POST":
+        if request.user.is_authenticated:
+            form = AddToCartForm(request.POST)
+            
+        if form.is_valid():
+            cart = form.save(commit=False)
+            customer = Customer.objects.get(user_id = request.user.id)
+            cart = Order.objects.get_or_create(userID_id = customer.user_id)[0]
+            cart.orderID_id = cart.id
+            
+            cartNecklace = Order_Necklace.objects.get_or_create(orderID_id = cart.orderID_id, necklaceID_id = necklace.id)[0]
+            cartNecklace.necklaceID_id = necklace.id
+            cartNecklace.quantity = form.cleaned_data['quantity']
+            
+            if cartNecklace.quantity == 0:
+                cartNecklace.delete()
+                cart.save()
+            else:    
+                cart.save()
+                cartNecklace.save()
+            
+        else:
+            print(form.errors)
     
+    context_dict['form'] = form
     return render(request, 'floppa/necklace.html', context=context_dict)    
 
 def add_necklace(request):
@@ -124,7 +140,8 @@ def add_necklace(request):
         
         if form.is_valid():
             form.save(commit=True)
-            return redirect('/floppa/necklaces')
+            return redirect('floppa:necklaces')
         else:
             print(form.errors)
+            
     return render(request, 'floppa/add_necklace.html', {'form': form})        
