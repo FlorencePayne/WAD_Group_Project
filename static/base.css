@@ -192,7 +192,7 @@ p {
   color: black;
 }
 
-h1, p, h3, h4{
+h1, p, h3, h4, h5 {
 	color: white;
 }
 
@@ -216,6 +216,10 @@ h3 {
 h4 {
 	font-size: 25px;
 	font-size: 3.5vh;
+}
+
+h5 {
+	font-size: 6vh;
 }
 
 
@@ -244,3 +248,4 @@ h4 {
 .defaultButton{
 	font-family: Archivo;
 }
+
