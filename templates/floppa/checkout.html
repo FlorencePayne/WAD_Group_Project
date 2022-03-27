@@ -6,14 +6,11 @@
 {% endblock %}
 
 {% block body_block %}
-	<p> Your total is: </p>
-	£{{ total }}
-	<br> 
-	<a href = "{% url 'floppa:cart' %}"> Cart </a>
+	<p>Your total is: £{{ total }} <a href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 30pts /></a></p>
 	
 	<form id="contact" method="post" action="{% url 'floppa:payment_confirmed' %}">
 	{% csrf_token %}
-	<p>please leave your full name and email address if you would like us to contact you regarding any questions</p>
+	<p>please fill out your payment details below!: </p>
 	<p>cardholder's name:</p> <input type="text" name="reply" value="" size="30"/>
 	<p>credit card numbers:</p> <input type="text" name="reply" value="" size="16"/><br />
 	<p>cvv:</p> <input type="text" name="reply" value="" size="3"/><br />

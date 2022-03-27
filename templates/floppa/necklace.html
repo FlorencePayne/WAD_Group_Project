@@ -28,7 +28,7 @@
                     </div>
                 </div> -->
 				
-                <form id="add_to_cart_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:necklace' necklace.slug%}">
+                <form id="add_to_cart_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:cart'%}">
 					{% csrf_token %}		
 					{{ form.as_p }}
 				<input type="submit" name="submit" value="add to cart" />

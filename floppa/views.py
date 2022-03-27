@@ -42,7 +42,8 @@ def signin(request):
         return render(request, 'floppa/login.html')
     
 def account(request):
-    return render(request, 'floppa/account.html')
+    customers = Customer.objects.get(user_id = request.user.id)
+    return render(request, 'floppa/account.html', context={'customers':customers})
       
 def signup(request):
     registered = False
@@ -104,7 +105,7 @@ def necklace(request, necklace_name_slug):
         if form.is_valid():
             cart = form.save(commit=False)
             customer = Customer.objects.get(user_id = request.user.id)
-            cart = Order.objects.get_or_create(userID_id = customer.user_id)[0]
+            cart = Order.objects.get_or_create(userID = customer)[0]
             cart.orderID_id = cart.id
             
             cartNecklace = Order_Necklace.objects.get_or_create(orderID_id = cart.orderID_id, necklaceID_id = necklace.id)[0]
