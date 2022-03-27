@@ -10,6 +10,8 @@ body{
 
 }
 
+#
+
 #logo {
   position: absolute;
   z-index: -1;
@@ -222,12 +224,20 @@ h5 {
 	font-size: 6vh;
 }
 
-
 .index-media {
-    position: relative;
+    /*height: 30%;
+    width: 50%;
 	float: center;
-	justify-content:center;
-    float:center;
+    justify-content: center;*/
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+#index-scaling {
+    height:280px;
+    width: 375px;
 }
 
 /* css for scrollbar */

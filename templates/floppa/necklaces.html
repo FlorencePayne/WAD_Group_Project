@@ -24,6 +24,7 @@
 				<div>
 				{% if necklace.image1 %}
 					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 200px ></a>
+					{{necklace.name}}
 				{% else %}
 					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 200px></a>
 				{% endif %}
@@ -33,7 +34,7 @@
 			</tr>
 		</table>
 		{% endfor %}
-		
+
 		{%if user.is_staff%}
 		<a href = "{% url 'floppa:add_necklace' %}">
 		<button class="classic-btn" id="necklaces-addnecklacebtn">
@@ -41,6 +42,6 @@
 		</button>
 		</a>
 		{%endif%}
-		
+
 	</div>
 {% endblock %}
