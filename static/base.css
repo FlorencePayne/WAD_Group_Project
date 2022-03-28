@@ -10,10 +10,16 @@ body{
 
 }
 
+#aboutbody-positioning {
+    top: 5%;
+    position: relative;
+    float: center;
+    justify-content: center;
+}
+
 .logo{
-      top: -10%;
+    top: -10%;
 	position: relative;
-	float: center;
 	justify-content:center;
 }
 

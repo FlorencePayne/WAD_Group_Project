@@ -8,7 +8,7 @@
 {% block body_block %}
 {% if registered %}
 	<h1>thank you for registering!</h1>
-	<a href="{% url 'floppa:index' %}"><button class="classic-btn">return to home page<br/></button></a>
+	<a href="{% url 'floppa:login' %}"><button class="classic-btn">log in<br/></button></a>
 {%else%}
 <div class="signup-align">
 	<form class = "signup-form" id="user_form" method="post" action="{% url 'floppa:signup' %}"
