@@ -9,25 +9,25 @@
 	<h1>necklaces</h1>
     <div class="search bar">
 		<form>
-			<input type="search" placeholder="Search Necklaces">
-			<button type="submit" class ="search-btn">
+			<input id="search_input" type="search" placeholder="Search Necklaces">
+			<button id="search_btn" type="submit" class ="search-btn">
 			    <img class = "search-img" src="{% static 'images/search button.png' %}" alt="Click to search" width=50pts/>
-			    </button>
+			</button>
 		</form>
 	</div>
 
 	<div>
 		{% for necklace in necklaces%}
-		<table>
+		<table id="necklaces_table">
 			<tr>
 				<td>
 				<div>
 				{% if necklace.image1 %}
 					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 200px ></a>
-					{{necklace.name}}
 				{% else %}
 					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 200px></a>
 				{% endif %}
+				<h6>{{necklace.name}}</h6>
 				<h6>{{necklace.price}}</h6>
 				</div>
 				</td>

@@ -19,11 +19,19 @@
                 <p>{{necklace.description}}</p>
                 <h6>{{necklace.price}}</h6>
 				
-                <form id="add_to_cart_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:cart'%}">
-					{% csrf_token %}		
-					{{ form.as_p }}
-				<input type="submit" name="submit" value="add to cart" />
-			</form>
+                {% if user.is_authenticated %}
+                    <form id="add_to_cart_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:cart'%}">
+					    {% csrf_token %}		
+					    {{ form.as_p }}
+				    <input type="submit" name="submit" value="add to cart" />
+			        </form>
+                {% else %} 
+                <form id="add_to_cart_form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}		
+                    {{ form.as_p }}
+                <input type="submit" name="submit" value="add to cart" />
+                </form>
+                {% endif %}
             </div>
         </div>    
 {% endblock %}
