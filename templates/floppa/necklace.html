@@ -18,15 +18,6 @@
             <div>
                 <p>{{necklace.description}}</p>
                 <h6>{{necklace.price}}</h6>
-           <!--     <div class="dropdown">
-                    <button class="dropbtn">Quantity</button>
-                    <div class="drop-content">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                    </div>
-                </div> -->
 				
                 <form id="add_to_cart_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:cart'%}">
 					{% csrf_token %}		

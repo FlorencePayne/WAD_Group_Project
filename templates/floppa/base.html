@@ -21,20 +21,20 @@
 			<div class="topnav"> <!-- calling the class with the navigation bar styles-->
 
 	            <a class="homeImage" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
-				<a style="float:right" href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
 			
 		        <!--setting condition on what the user sees depending on if logged in or not-->
 				{% if user.is_authenticated %}
-                        <a style="float:right" href = "{% url 'floppa:account' %}"> <!--setting up buttons to take user to corresponding page -->
-						<button class = "classic-btn"> account</button>
-						</a>
+					<a style="float:right" href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
+					<a style="float:right" href = "{% url 'floppa:account' %}"> <!--setting up buttons to take user to corresponding page -->
+					<button class = "classic-btn"> account</button>
+					</a>
 				{% else %}
-                        <a style="float:right" href = "{% url 'floppa:signup' %}">
-						<button  class="classic-btn">sign up</button>
-						</a>
-						<a style="float:right" href = "{% url 'floppa:login' %}">
-                        <button class="classic-btn" >log in</button>
-						 </a>
+                    <a style="float:right" href = "{% url 'floppa:signup' %}">
+					<button  class="classic-btn">sign up</button>
+					</a>
+					<a style="float:right" href = "{% url 'floppa:login' %}">
+                    <button class="classic-btn" >log in</button>
+					 </a>
 				{% endif %}
 			</div>
 		</div>
