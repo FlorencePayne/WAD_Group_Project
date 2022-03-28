@@ -9,27 +9,29 @@
 <div id = cart>
 	<div id = picturesCart>
 	{% for necklace in necklaces %}
-		<img class = cartPics, src="{{necklace.image1.url}}" alt="Image of necklace" width = 100px >
+		<img class = cartPics, src="{{necklace.image1.url}}" width =130px alt="Image of necklace">
 		<br>
 	{% endfor %}
 	</div>
-	
+
 	<div id = namesCart>
 	{% for necklace in necklaces %}
 		{{ necklace.name }}
 		<br>
 	{% endfor %}
-	</div> 
-	
+	</div>
+
 	<div id = pricesCart>
 	{% for price in prices %}
 		£{{ price }}
-		<br> 
+		<br>
 	{% endfor %}
 	</div>
-</div>	
+	<br>
+	</br>
+</div>
 
 
-	<a href = "{% url 'floppa:checkout' %}"> Checkout </a>
-	
+	<a class = "classic-btn" href = "{% url 'floppa:checkout' %}"> Checkout </a>
+
 {% endblock %}

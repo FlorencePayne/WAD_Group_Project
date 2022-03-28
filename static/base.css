@@ -10,21 +10,26 @@ body{
 
 }
 
-#
-
-#logo {
-  position: absolute;
-  z-index: -1;
-  overflow: hidden;
-  height: 20%;
-  width: 30%;
-  top: 5%;
-  bottom: 5%;
-  right: 5%;
-  left: 5%;
-  position:relative;
+.logo{
+      top: -10%;
+	position: relative;
+	float: center;
+	justify-content:center;
 }
 
+.signout-btn{
+    position:relative;
+}
+#signout-btn-position {
+    position:absolute;
+    bottom:0;
+    right:0;
+}
+
+.contact-largerinput {
+        height:200px;
+        width: 500px;
+}
 
 .header {
   position: relative;
@@ -87,13 +92,6 @@ body{
 position:relative;
 }
 
-.logo{
-	top: 0;
-	position: relative;
-	float: center;
-	justify-content:center;
-}
-
 /* buttons appearance properties*/
 .index-btn{
     border-radius: 4px;
@@ -119,20 +117,21 @@ position:relative;
   left: 40%;
 }
 
+/* buttons format outwith the index page*/
 .classic-btn {
     border-radius: 4px;
     padding: 10px 16px;
     background-color: white;
     color: black;
     font-size: 24px;
-    border: 4.75px solid black;
-    padding: 8px 16px;
+    border: 6px solid black;
+    padding: 3px 16px;
 }
 
 .classic-btn:hover {
     background-color: black;
     color:white;
-    border:3px solid white;
+    border:6px solid white;
 }
 
 
@@ -161,15 +160,20 @@ p {
 	text-align: center;
 }
 
+.search-bar{
+    height: 37px;
+    width: 200px;
+    border: 4px solid #67B7E6;
+
+}
 
 /* The navbar container */
 .topnav {
     position: relative;
-  background-color: #c1c1c1;
   left: 0;
   color: #c1c1c1;
   text-align: right;
-  height: 5%;
+  height: 2%;
   padding: 1%;
   width: 100%;
   text-align: justify;
@@ -181,7 +185,6 @@ p {
 /* Navigation bar shown on every page outwith home page (index.html) */
 .topnav a {
   float: left;
-  color: #c1c1c1;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -190,7 +193,6 @@ p {
 
 /* Links - change color on hover */
 .topnav a:hover {
-  background-color: #c1c1c1;
   color: black;
 }
 
@@ -203,7 +205,8 @@ h1 {
 }
 
 .center {
- text-align: center
+  margin-left: auto;
+  margin-right: auto;
 }
 
 h2 {
@@ -239,6 +242,49 @@ h5 {
     height:280px;
     width: 375px;
 }
+/* css for image overlay effect on  necklaces page*/
+.container {
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.image {
+  display: block;
+  width: 180px;
+  height: 180px;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 180px;
+  width: 180px;
+  opacity: 0;
+  transition: .5s ease;
+  background-color: white;
+}
+
+.container:hover .overlay {
+  opacity: 1;
+}
+
+.text {
+  color: #67B7E6;
+  font-size: 25px;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  -webkit-transform: translate(50%, 50%);
+  -ms-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+  text-align: center;
+  float:center;
+}
+
 
 /* css for scrollbar */
 
