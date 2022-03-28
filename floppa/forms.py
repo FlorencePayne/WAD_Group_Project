@@ -1,3 +1,4 @@
+from unicodedata import name
 from django import forms
 from floppa.models import Necklace, Customer, Order_Necklace
 from django.contrib.auth.models import User
@@ -32,7 +33,7 @@ class UserProfileForm(forms.ModelForm):
 
 
 class AddToCartForm(forms.ModelForm):
-    quantity = forms.IntegerField(initial=1)
+    quantity = forms.IntegerField(initial=1, min_value=1, max_value=3)
     
     class Meta:
         model = Order_Necklace
