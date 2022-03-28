@@ -107,15 +107,13 @@ def necklace(request, necklace_name_slug):
             
         if form.is_valid():
             cart = form.save(commit=False)
-            customer = Customer.objects.get(user_id = request.user.id)
+            customer = Customer.objects.get(customer.customer_id == request.user.id)
             cart = Order.objects.get_or_create(userID = customer)[0]
-            cart.orderID_id = cart.id
             
-            cartNecklace = Order_Necklace.objects.get_or_create(orderID_id = cart.orderID_id, necklaceID_id = necklace.id)[0]
-            cartNecklace.necklaceID_id = necklace.id
+            cartNecklace = Order_Necklace.objects.get_or_create(orderID = cart.order_id, necklaceID = necklace_id)[0]
             cartNecklace.quantity = form.cleaned_data['quantity']
             
-            if cartNecklace.quantity == 0:
+            if form.cleaned_data['quantity'] == 0:
                 cartNecklace.delete()
                 cart.save()
             else:    
@@ -152,9 +150,9 @@ def cart(request):
     counter = 0;
     
     customer = Customer.objects.get(user_id = request.user.id)
-    cart = Order.objects.get_or_create(userID_id = customer.user_id)[0]
+    cart = Order.objects.get_or_create(userID = customer)[0]
     cart.orderID_id = cart.id
-    necklaces = Order_Necklace.objects.filter(orderID_id = cart.orderID_id)
+    necklaces = Order_Necklace.objects.filter(orderID = cart)
     
     for necklaceRef in necklaces:
         necklace = Necklace.objects.get(id = necklaceRef.necklaceID_id)
