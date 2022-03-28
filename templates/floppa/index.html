@@ -1,15 +1,16 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--home page-->
 {% load static %}
 
 <html>
 	<head>
 		<title>
-		₍⑅ᐢ.ˬ.ᐢ₎♡✧FLOPPABUNNY
+		₍⑅ᐢ.ˬ.ᐢ₎♡✧FLOPPABUNNY <!--page title-->
 		</title>
-		<link rel="stylesheet" href="{% static 'base.css' %}"/>
+		<link rel="stylesheet" href="{% static 'base.css' %}"/> <!--calling stylesheet-->
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewellery">
 		<meta name="viewport" content="width=device-width, initial-scale-1.0">
+		<!--importing google fonts-->
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
 		</style>
@@ -22,16 +23,18 @@
 				<a href = "{% url 'floppa:about' %}">
 				<button class = "index-btn", id = "btnleft"> about us</button>
 				</a>
+				<!--checking if user is logged in-->
 				{% if user.is_authenticated %}
+				    <!--sign out button if user is logged in, which takes user to signout.html if clicked-->
 					<a href = "{% url 'floppa:signout' %}">
 					<button class = "index-btn", id ="btnfarright" > sign out</button>
 					</a>
-				{% else %}
-					<!-- sign up button leading to sign up page -->
+				{% else %} <!--if user not logged in, they will see sign up button and log in-->
+					<!-- sign up button leading to signup.html when clicked-->
 					<a href = "{% url 'floppa:signup' %}">
 					<button class = "index-btn", id = "btnright" = > sign up</button>
 					</a>
-					<!-- log in button leading to log in page -->
+					<!-- log in button leading to login.html when clicked-->
 					<a href = "{% url 'floppa:login' %}">
 					<button class = "index-btn", id ="btnfarright" > log in</button>
 					</a>
@@ -41,9 +44,11 @@
 		<br>
 		</br>
 		<div >
-			<h1>welcome 2 floppabunny</h1>
+			<h1>welcome 2 floppabunny</h1> <!--heading on home page-->
+			<!--bunny image udnerneath the heading and calling with class and id selectors to ensure scaled properly-->
 			<img class = "index-media" id = "index-scaling" src="{% static 'images/bunny.png' %}" alt = "bunny"/>
 
+            <!--n-->
 			<a href="{% url 'floppa:necklaces' %}">
 			<button class="index-btn" id="index-necklacesbtn">
                 necklaces

@@ -10,6 +10,14 @@ body{
 
 }
 
+.necklacesbody {
+  color: black;
+}
+a {
+  color: inherit; /* black colors for links too */
+  text-decoration: inherit; /* no underline */
+}
+
 /*controls the floppabunny gif on all pages except index.html (home page)*/
 .logo{
     top: -10%; /* moving the logo further up the page*/

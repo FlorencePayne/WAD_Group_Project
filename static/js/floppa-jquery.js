@@ -1,9 +1,5 @@
 $(document).ready(function() {
-    //Create a function that respond to a click of the form and sends an alert
-    $('#add_to_cart_form').click(function() {
-        alert('Please log in to add items to cart'); 
-    });
-    
+
     //Create function that responds when user inputs text and stores it in lowercase in the value variable
     $("#search_input").on("keyup", function() {
         var value = $(this).val().toLowerCase();

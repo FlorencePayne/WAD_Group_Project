@@ -26,15 +26,18 @@
 					<div class = "overlay">
 					    <div class="text">{{necklace.price}}</div>
 					</div>
+					<a class = necklacesbody href="/floppa/necklaces/{{necklace.slug}}/">
 					{{necklace.name}}
+					</a>
 					<br>
-                    </br>
 				{% else %}
 					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" class"image"></a>
 						<div class = "overlay">
 					    <div class="text">{{necklace.price}}</div>
 					</div>
+					<a class = necklacesbody href="/floppa/necklaces/{{necklace.slug}}/">
 					{{necklace.name}}
+					</a>
 					<br>
                     </br>
 				{% endif %}
