@@ -4,6 +4,7 @@ from django.template.defaultfilters import slugify
 
 
 #LARGE TABLES#
+# create new model and define fields 
 class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     address1 = models.CharField(max_length=20)
@@ -23,7 +24,8 @@ class Necklace(models.Model):
     slug = models.SlugField(unique=True)
     image1 = models.ImageField(null=True, blank=True, max_length=255, upload_to ="media/")
     image2 = models.ImageField(null=True, blank=True, max_length=255, upload_to ="media/")
- 
+    
+    # create function for the slug field to work
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
         super(Necklace, self).save(*args, **kwargs)

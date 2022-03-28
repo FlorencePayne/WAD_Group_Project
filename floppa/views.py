@@ -7,9 +7,9 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 from floppa.models import Necklace, Order, Order_Necklace, Customer
-
-
 from django.shortcuts import render
+
+# create view with request as parameter which also returns the context dictionary 
 def index(request):
     context_dict = {'boldmessage': 'Necklaces'}
     return render(request, 'floppa/index.html', context=context_dict)
@@ -21,11 +21,13 @@ def contact(request):
     return render(request, 'floppa/contact.html')
      
 def signin(request):
+    # retrive input from the user and create user vairable with inputs
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)
 
+        #if statement to handle different instances of user being logged in
         if user:
         
             if user.is_active:
@@ -52,6 +54,7 @@ def signup(request):
         user_form = UserForm(request.POST)
         profile_form = UserProfileForm(request.POST)
         
+        # if statement to check if the sign up form is valid and to register the user
         if user_form.is_valid() and profile_form.is_valid():
             user = user_form.save()
             user.set_password(user.password)
