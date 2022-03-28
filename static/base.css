@@ -31,6 +31,13 @@ body{
         width: 500px;
 }
 
+.signup-align{
+    text-align: center;
+}
+
+.signup-form{
+    display: inline-block;
+}
 .header {
   position: relative;
   background-color: #c1c1c1;
