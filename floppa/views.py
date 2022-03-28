@@ -150,9 +150,15 @@ def cart(request):
     counter = 0;
     
     customer = Customer.objects.get(user_id = request.user.id)
+
     cart = Order.objects.get_or_create(userID = customer)[0]
     cart.orderID_id = cart.id
     necklaces = Order_Necklace.objects.filter(orderID = cart)
+
+    cart = Order.objects.get_or_create(userID_id = customer.user_id)[0]
+    cart.orderID_id = cart.id
+    necklaces = Order_Necklace.objects.filter(orderID_id = cart.orderID_id)
+
     
     for necklaceRef in necklaces:
         necklace = Necklace.objects.get(id = necklaceRef.necklaceID_id)

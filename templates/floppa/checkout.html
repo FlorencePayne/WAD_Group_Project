@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block body_block %}
+
     <!--displaying the contents of cart as it is linked to cart.html-->
     <!--displays the necklaces added to cart by user-->
     <!--displays total amount due by user for necklaces added to cart-->
@@ -16,14 +17,29 @@
 	{% csrf_token %}
 	<p>please fill out your payment details below!: </p> <!--user instructions on payment-->
 	<!--text inputs of users' details-->
+	<p> Your total is: </p>
+	£{{ total }}
+	<br> 
+	<a href = "{% url 'floppa:cart' %}"> Cart </a>
+	
+	<form id="contact" method="post" action="{% url 'floppa:payment_confirmed' %}">
+	{% csrf_token %}
+	<p>please leave your full name and email address if you would like us to contact you regarding any questions</p>
+>>>>>>> Stashed changes
 	<p>cardholder's name:</p> <input type="text" name="reply" value="" size="30"/>
 	<p>credit card numbers:</p> <input type="text" name="reply" value="" size="16"/><br />
 	<p>cvv:</p> <input type="text" name="reply" value="" size="3"/><br />
 	<p>expiry date:</p> <input type="text" name="reply" value="" size="5"/><br />
 	<br />
 	<br />
+<<<<<<< Updated upstream
 	<!--button allowing customer to pay for necklaces in checkout-->
 	<button class = "classic-btn" type="submit"> pay now! </button>
 	</form>	<!--end of form-->
 
+=======
+	<button class = "classic-btn" type="submit"> pay now! </button>
+	</form>	
+	
+>>>>>>> Stashed changes
 {% endblock %}
