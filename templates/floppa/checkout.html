@@ -1,23 +1,29 @@
-{% extends 'floppa/base.html' %}
+{% extends 'floppa/base.html' %} <!--inherits base.html-->
 {% load static %}
 
 {% block title_block %}
-	₍⑅ᐢ.ˬ.ᐢ₎♡✧CHECKOUT
+	₍⑅ᐢ.ˬ.ᐢ₎♡✧CHECKOUT<!--page title-->
 {% endblock %}
 
 {% block body_block %}
+    <!--displaying the contents of cart as it is linked to cart.html-->
+    <!--displays the necklaces added to cart by user-->
+    <!--displays total amount due by user for necklaces added to cart-->
 	<p>Your total is: £{{ total }} <a href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 30pts /></a></p>
-	
+
+	<!--form used for making payment and verifying them-->
 	<form id="contact" method="post" action="{% url 'floppa:payment_confirmed' %}">
 	{% csrf_token %}
-	<p>please fill out your payment details below!: </p>
+	<p>please fill out your payment details below!: </p> <!--user instructions on payment-->
+	<!--text inputs of users' details-->
 	<p>cardholder's name:</p> <input type="text" name="reply" value="" size="30"/>
 	<p>credit card numbers:</p> <input type="text" name="reply" value="" size="16"/><br />
 	<p>cvv:</p> <input type="text" name="reply" value="" size="3"/><br />
 	<p>expiry date:</p> <input type="text" name="reply" value="" size="5"/><br />
 	<br />
 	<br />
+	<!--button allowing customer to pay for necklaces in checkout-->
 	<button class = "classic-btn" type="submit"> pay now! </button>
-	</form>	
-	
+	</form>	<!--end of form-->
+
 {% endblock %}

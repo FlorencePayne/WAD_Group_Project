@@ -1,37 +1,37 @@
-{% extends 'floppa/base.html' %}
+{% extends 'floppa/base.html' %} <!--inherits base.html-->
 {% load static %}
 
 {% block title_block %}
-	₍⑅ᐢ.ˬ.ᐢ₎♡✧CART
+	₍⑅ᐢ.ˬ.ᐢ₎♡✧CART <!--page title-->
 {% endblock %}
 
 {% block body_block %}
 <div id = cart>
-	<div id = picturesCart>
-	{% for necklace in necklaces %}
-		<img class = cartPics, src="{{necklace.image1.url}}" width =130px alt="Image of necklace">
+	<div id = picturesCart> <!--calling id with the pictures of necklaces in cart-->
+	{% for necklace in necklaces %} <!--loading in pictures of chosen necklaces to cart-->
+		<img class = cartPics, src="{{necklace.image1.url}}" width =130px alt="Image of necklace"> <!--shows the necklaces in cart-->
 		<br>
-	{% endfor %}
+	{% endfor %} <!--end of loop-->
 	</div>
 
-	<div id = namesCart>
+	<div id = namesCart> <!--calling id with corresponding names of necklaces in cart-->
 	{% for necklace in necklaces %}
-		{{ necklace.name }}
+		{{ necklace.name }} <!--loading in every necklace name that is in the cart-->
 		<br>
-	{% endfor %}
+	{% endfor %} <!--end of loop-->
 	</div>
 
-	<div id = pricesCart>
-	{% for price in prices %}
-		£{{ price }}
+	<div id = pricesCart> <!--calling id with corresponding prices of the necklaces in cart -->
+	{% for price in prices %} <!--loop around prices-->
+		£{{ price }} <!--display prices-->
 		<br>
-	{% endfor %}
+	{% endfor %} <!--end of loop-->
 	</div>
 	<br>
 	</br>
 </div>
 
-
+    <!--checkout button leading to checkout.html-->
 	<a class = "classic-btn" href = "{% url 'floppa:checkout' %}"> Checkout </a>
 
 {% endblock %}

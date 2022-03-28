@@ -1,20 +1,20 @@
-{% extends 'floppa/base.html' %}
+{% extends 'floppa/base.html' %} <!--inherits base.html-->
 {% load static %}
 
 {% block title_block %}
-	₍⑅ᐢ.ˬ.ᐢ₎♡✧CONTACT FORM
+	₍⑅ᐢ.ˬ.ᐢ₎♡✧CONTACT FORM <!--page title-->
 {% endblock %}
 
 {% block body_block %}
-<h1>customer feedback form</h1>
-<h4>give us your details:</h4>
-<form id="contact" method="post" action="{% url 'floppa:contact' %}">
+<h1>customer feedback form</h1> <!--heading-->
+<h4>give us your details:</h4> <!--instructing user on what they have to do-->
+<form id="contact" method="post" action="{% url 'floppa:contact' %}"> <!--form connecting to backend-->
 	{% csrf_token %}
 <p>please leave your full name and email address if you would like us to contact you regarding any questions
 </p>
 <p>full name:
 </p>
-<input type="text" name="reply" value="" size="30"/>
+<input type="text" name="reply" value="" size="30"/> <!--setting up limitations to for input validation-->
 <br />
 <p>email address:
 </p>
@@ -22,9 +22,11 @@
 <br />
 <p>please type in the details of your case. we'll get back at you as soon as possible!
 </p>
+<!--calling class selector on base.css due to different format and larger input size-->
 <input class ="contact-largerinput" type="textarea" name="feedback" value="" size="300"/>
 <br />
 <br />
+<!--button so user can submit contact form-->
 <input class = "classic-btn" type="submit" value="contact" />
-</form>
+</form> <!--end of form-->
 {% endblock %}
