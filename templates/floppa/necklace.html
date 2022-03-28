@@ -18,12 +18,14 @@
             <div>
                 <p>{{necklace.description}}</p>
                 <h6>{{necklace.price}}</h6>
-				
+
                 <form id="add_to_cart_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:cart'%}">
-					{% csrf_token %}		
+					{% csrf_token %}
 					{{ form.as_p }}
-				<input type="submit" name="submit" value="add to cart" />
+					<br>
+					</br>
+				<input class = "classic-btn" type="submit" name="submit" value="add to cart" />
 			</form>
             </div>
-        </div>    
+        </div>
 {% endblock %}

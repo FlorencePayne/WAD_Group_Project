@@ -13,7 +13,7 @@
 		<form id="necklace_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:add_necklace' %}">
 			{% csrf_token %}
 			{{ form.as_p }}
-			<input type="submit" name="submit" value="Create Necklace" />
+			<input class="classic-btn" type="submit" name="submit" value="Create Necklace" />
 		</form>
 	</div>
 {% endblock %}
