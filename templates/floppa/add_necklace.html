@@ -1,19 +1,20 @@
-{% extends 'floppa/base.html' %}
+{% extends 'floppa/base.html' %} <!--inherits base.html-->
 {% load static %}
 
 {% block title_block %}
-	₍⑅ᐢ.ˬ.ᐢ₎♡✧ADD NECKLACE
+	₍⑅ᐢ.ˬ.ᐢ₎♡✧ADD NECKLACE <!--page title-->
 {% endblock %}
 
 {% block body_block %}
 	<h1>
-		₍⑅ᐢ.ˬ.ᐢ₎♡✧Add a Necklace!
+		₍⑅ᐢ.ˬ.ᐢ₎♡✧Add a Necklace!<!--heading to illustrate to staff what the function of the page is -->
 	</h1>
 	<div>
+	    <!--creating form so staff members can add new products with connections to the necklace_form-->
 		<form id="necklace_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:add_necklace' %}">
 			{% csrf_token %}
 			{{ form.as_p }}
-			<input class="classic-btn" type="submit" name="submit" value="Create Necklace" />
+			<input class="classic-btn" type="submit" name="submit" value="Create Necklace" /> <!--create necklace button-->
 		</form>
 	</div>
 {% endblock %}

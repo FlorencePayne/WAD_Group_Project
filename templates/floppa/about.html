@@ -1,14 +1,14 @@
-{% extends 'floppa/base.html' %}
+{% extends 'floppa/base.html' %} <!--inherits base.html-->
 {% load static %}
 
 {% block title_block %}
-	₍⑅ᐢ.ˬ.ᐢ₎♡✧ABOUT US
+	₍⑅ᐢ.ˬ.ᐢ₎♡✧ABOUT US <!--page title-->
 {% endblock %}
 
 {% block body_block %}
-	<div class= "body">
+	<div class= "body"> <!--class base.css stylesheet for formatting-->
 		<h5>⋆ ˚｡⋆♡˚get to know us˚♡⋆｡˚ ⋆</h5>
-		<div id="aboutbody-positioning">
+		<div> <!--main body of text explaining the business-->
 			<p>floppabunny is a small business ran by team of students from glasgow with the
 			goal of selling you the cutest necklaces at an affordable price <3 </p>
 			<p>florence payne (our founder & ceo) creates all of our necklaces. she obtains all of the materials for our necklaces
@@ -23,8 +23,8 @@
 	</div>
 	<div class="contact">
 	<h3> contact us by clicking below! </h3>
-		<a href = "{% url 'floppa:contact' %}">
-		<button class="classic-btn" id="necklaces-addnecklacebtn">contact form</button>
+		<a href = "{% url 'floppa:contact' %}"> <!--setting up link to contact.html when button is clicked-->
+		<button class="classic-btn" id="necklaces-addnecklacebtn">contact form</button> <!--class and id selector to specify the button-->
 		</a>
 	</div>
 {% endblock %}

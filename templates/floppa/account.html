@@ -1,19 +1,20 @@
-{% extends 'floppa/base.html' %}
+{% extends 'floppa/base.html' %} <!--inherits base.html-->
 {% load static %}
 
 {% block title_block %}
-	₍⑅ᐢ.ˬ.ᐢ₎♡✧ACCOUNT
+	₍⑅ᐢ.ˬ.ᐢ₎♡✧ACCOUNT<!--title -->
 {% endblock %}
 
 {% block body_block %}
-    	{% if user.is_authenticated %}
-		<h1> you're logged in ! ₍ᐢ.ˬ.⑅ᐢ₎</h1>
-
+    	{% if user.is_authenticated %} <!--condition to check if user is signed in or not-->
+		<h1> you're logged in ! ₍ᐢ.ˬ.⑅ᐢ₎</h1> <!--message shown to logged in users -->
+        <!--button leading logged in user back to home page-->
 		<a href = "{% url 'floppa:index' %}"><button class = "classic-btn"> back home </button></a>
 		{%else%}
-			<a href = "{% url 'floppa:login' %}">
+		<!--if the user isn't signed in, user will get the option to sign in by clicking log in button that's clearly labelled-->
+			<a href = "{% url 'floppa:login' %}"> <!--setting up where the page destination is once the user clicks the button-->
 	<button class = "classic-btn" id="account-loginbtn"> log in </button>
-	 </a><br>
-	{% endif %}
+	 </a>
+	{% endif %} <!--end of if statement-->
 
 {% endblock %}

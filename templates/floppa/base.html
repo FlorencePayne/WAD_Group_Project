@@ -1,18 +1,18 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--main html page with basis of every other page-->
 {% load static %}
 <html>
 	<head>
 		<title>
-			{% block title_block %}
+			{% block title_block %} <!--no title needed as user won't see this page-->
 			{% endblock %}
 		</title>
 		<link rel="stylesheet" href="{% static 'base.css' %}"/> <!--calling stylesheet-->
-		<link rel="stylesheet" href="{% static 'necklacestyle.css' %}"/>
 		<meta charset="UTF-8">
 		<meta name = "keywords" content = "Necklace, Retailer, Online Shopping, Jewlery">
 		<meta name="viewport" content="width=device-width, initial-scale-1.0">
+		<!--importing Archivo google font-->
 		<style>
-			@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap');
+			@import url('https://fonts.googleapis.com/css2?family=Archivo&display=swap'); <
 		</style>
 	</head>
 
@@ -20,15 +20,18 @@
 		<div>
 			<div class="topnav"> <!-- calling the class with the navigation bar styles-->
 
+                <!--home icon which will be linked to index.html (home page) and will be there regardless of status-->
 	            <a class="homeImage" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/homeIcon.png' %}" alt="Home" width=50pts/> </a>
 
 		        <!--setting condition on what the user sees depending on if logged in or not-->
 				{% if user.is_authenticated %}
+				<!--when logged in, user will see account button leading to account.html-->
                         <a style="float:right" href = "{% url 'floppa:account' %}"> <!--setting up buttons to take user to corresponding page -->
 						<button class = "classic-btn"> account</button>
 						</a>
+				<!--logged in user will see cart image which leads to cart.html-->
 						<a style="float:right" href = "{% url 'floppa:cart' %}"> <img src="{% static 'images/cart.png' %}" alt="Cart" width = 40pts /> </a>
-				{% else %}
+				{% else %} <!--if user isn't logged in, they will see sign up button leading to signup.html and log in button leading to login.html-->
                         <a style="float:right" href = "{% url 'floppa:signup' %}">
 						<button  class="classic-btn">sign up</button>
 						</a>
@@ -38,9 +41,9 @@
 				{% endif %}
 			</div>
 		</div>
-		<!-- to here!!! -->
 
-            <!--the floppabunny logo gif on every page except from home or index.html -->
+            <!--the floppabunny logo gif on every page except from index.html (home page) -->
+            <!--when logo is clicked, it will take user to index.html-->
             <a class ="logo" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 300vw /> </a>
 
 
@@ -48,10 +51,10 @@
 		{% block body_block %}
 		{% endblock %}
 		</div>
-		<div class = "footer">
-			<ul class="signout-btn">
-			{% if user.is_authenticated %}
-			<a href="{% url 'floppa:signout' %}">
+        <div>
+			<ul class="signout-btn"> <!--calling class from base.css-->
+			{% if user.is_authenticated %} <!--condition to see if user is logged in-->
+			<a href="{% url 'floppa:signout' %}"> <!--sign out button which leads the user to sign out page-->
 			<button class = "classic-btn" id = "signout-btn-position"> sign out </button>
 			</a>
 			{% endif %}
@@ -61,7 +64,7 @@
 		</div>
 
 
-		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script>
+		<script src="{% static "js/jquery-3.3.1.min.js" %}"  crossorigin="anonymous"></script> <!--javascript files and implementations-->
 		<script src="{% static "js/floppa-jquery.js" %}" crossorigin="anonymous"></script>
 
 	</body>
