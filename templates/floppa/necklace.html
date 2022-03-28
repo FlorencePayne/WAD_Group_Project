@@ -6,9 +6,9 @@
 {% endblock %}
 
 {% block body_block %}
-    <h1>{{necklace.name}}</h1>
+    <h1>{{necklace.name}}</h1> <!--corresponding necklace name is shown-->
         <div>
-            {% if necklace.image1 %}
+            {% if necklace.image1 %} <!--condition on which necklace images are being shown -->
                 <img src="{{necklace.image1.url}}" alt="First image of necklace" width=200px>
                 <img src="{{necklace.image2.url}}" alt="Second image of necklace" width=200px>
             {% else %}
@@ -16,14 +16,16 @@
                 <img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 200px>
             {% endif %}
             <div>
-                <p>{{necklace.description}}</p>
-                <h6>{{necklace.price}}</h6>
+                <p>{{necklace.description}}</p> <!--corresponding description of necklace-->
+                <h6>{{necklace.price}}</h6> <!--corresponding price of necklace-->
 
+                <!--form that allows user to add specific necklace to cart-->
                 <form id="add_to_cart_form" method="post" enctype="multipart/form-data" action="{% url 'floppa:cart'%}">
 					{% csrf_token %}
 					{{ form.as_p }}
 					<br>
 					</br>
+				<!--button which allows user to officially add to cart-->
 				<input class = "classic-btn" type="submit" name="submit" value="add to cart" />
 			</form>
             </div>

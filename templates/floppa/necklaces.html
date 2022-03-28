@@ -7,6 +7,8 @@
 
 {% block body_block %}
 	<h1>necklaces</h1>
+	<!--search bar which performs query in the process of getting typed and narrows results down-->
+	<!--class called from base.css which formats the search bar-->
     <div class="search bar">
 		<form >
 			<input class ="search-bar" id="search_input" type="search" placeholder="Search Necklaces">
@@ -16,21 +18,25 @@
 <br>
 </br>
 	<div>
-		{% for necklace in necklaces%}
+		{% for necklace in necklaces%} <!--for loop header around necklaces-->
+		<!--centers table so images are at centre of page-->
 		<table class = "center" id="necklaces_table">
 			<tr class ="center">
 				<td>
+				<!--setting up image overlay so user can see price when hovered over image-->
 				<div class="container">
 				{% if necklace.image1 %}
 					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" class="image"></a>
 					<div class = "overlay">
 					    <div class="text">{{necklace.price}}</div>
 					</div>
+					<!--when user clicks the name, it will take them to corresponding necklace place-->
 					<a class = necklacesbody href="/floppa/necklaces/{{necklace.slug}}/">
-					{{necklace.name}}
+					{{necklace.name}} <!--displays necklace name for user to click-->
 					</a>
 					<br>
 				{% else %}
+				<!--changes necklace image to be shown but same applied as above-->
 					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" class"image"></a>
 						<div class = "overlay">
 					    <div class="text">{{necklace.price}}</div>
@@ -49,8 +55,8 @@
 		</table>
 		{% endfor %}
 
-		{%if user.is_staff%}
-		<a href = "{% url 'floppa:add_necklace' %}">
+		{%if user.is_staff%} <!--condition that checks if user is staff -->
+		<a href = "{% url 'floppa:add_necklace' %}"> <!--functionality to allow user to add necklaces to the page-->
 		<button class="classic-btn" id="necklaces-addnecklacebtn">
             add necklace
 		</button>
