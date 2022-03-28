@@ -6,10 +6,9 @@
 {% endblock %}
 
 {% block body_block %}
-	<h3>sign up 2 floppabunny</h3>
 {% if registered %}
-	<strong>thank you for registering!</strong>
-	<a href="{% url 'floppa:index' %}">return to the homepage</a><br/>
+	<h1>thank you for registering!</h1>
+	<a href="{% url 'floppa:index' %}"><button class="classic-btn">return to home page<br/></button></a>
 {%else%}
 <div class="signup-align">
 	<form class = "signup-form" id="user_form" method="post" action="{% url 'floppa:signup' %}"
@@ -21,5 +20,5 @@
 	</form>
 </div>
 {% endif %}
-
+<h2>︵‿︵‿୨♡୧‿︵‿︵</h2>
 {% endblock %}
