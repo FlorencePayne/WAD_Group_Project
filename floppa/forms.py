@@ -5,7 +5,9 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 
 
+# main class to create form with parameter referencing the model which has already been created
 class NecklaceForm(forms.ModelForm):
+    # define the fields of the form
     name = forms.CharField(max_length=20)
     colour = forms.CharField(max_length=10)
     description = forms.CharField(max_length=50)

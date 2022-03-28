@@ -4,6 +4,7 @@ from floppa import views
 
 app_name = 'floppa'
 
+# define the urls for each template and set a name to be referenced
 urlpatterns = [
     path('', views.index, name='index'),
     path('about/', views.about, name='about'),
@@ -15,10 +16,8 @@ urlpatterns = [
     path('signup/', views.signup, name='signup'),
     path('signout/', views.signout, name='signout'),
     path('necklaces/', views.necklaces, name='necklaces'),
-    
     path('necklaces/add_necklace/', views.add_necklace, name='add_necklace'),
     path('necklaces/<slug:necklace_name_slug>/', views.necklace, name="necklace"),
     path('cart/checkout/payment_confirmed/', views.payment_confirmed, name='payment_confirmed'),
-
 ]
 
