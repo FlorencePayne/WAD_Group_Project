@@ -1,79 +1,62 @@
 html,
-
+/*the main design features of the text and background throughout website*/
 body{
-	background-color: #e6bdea;
+	background-color: #e6bdea; /*background colour throughout the website */
 	height: 95vh;
 	width: 95vw;
 	text-align: center;
-	font-family: Archivo;
+	font-family: Archivo; /*relates to the google font used throughout*/
 	font-size: 22px;
 
 }
 
-#aboutbody-positioning {
-    top: 5%;
-    position: relative;
-    float: center;
-    justify-content: center;
-}
-
+/*controls the floppabunny gif on all pages except index.html (home page)*/
 .logo{
-    top: -10%;
+    top: -10%; /* moving the logo further up the page*/
 	position: relative;
 	justify-content:center;
 }
-.search-btn{
-    	background-color: transparent;
-    	height:30px;
-    	width:30px;
-        border: 0px;
-    }
-.search-btn:hover {
-    background-image: url('static/images/search button invert.png')
-    height:30px;
-    width:30px;
-}
 
+/*postioning of the sign-out button on every page when the user logs in*/
 .signout-btn{
     position:relative;
 }
+/*sign out button will be on the bottom right hand corner of every page except index.html when logged in*/
 #signout-btn-position {
     position:absolute;
     bottom:0;
     right:0;
 }
 
+/*making the larger input box in contact form on contact.html be
+formatted and not span the whole width of the page*/
 .contact-largerinput {
-        height:200px;
-        width: 500px;
-}
-
-.signup-align{
-    text-align: center;
+    height:200px;
+    width: 500px;
 }
 
 .signup-form{
     display: inline-block;
 }
-.header {
-  position: relative;
-  background-color: #c1c1c1;
-  left: 0;
-  color: white;
-  text-align: right;
-  height: 5%;
-  padding: 1%;
-  width: 100%;
-  text-align: justify;
+
+/*positioning of the bunny image on index.html*/
+.index-media {
+    padding-bottom: 5vw;
+    justify-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
 }
 
-/* css code for where the floppabunny gif will be on webpages*/
-.index-media {
-    float:center;
-    padding-bottom: 5vw;
+/*scaling of bunny image on index.html*/
+#index-scaling {
+    height:280px;
+    width: 375px;
 }
 
 /* buttons positoning */
+/*moves buttons to top left hand side used on index.html*/
 #btnleft {
     margin: auto;
     margin-left: auto;
@@ -85,38 +68,20 @@ body{
 	paddling-left: 100px;
     float:left;
 }
-
+/*moves buttons to top right hand side used on index.html*/
 #btnright {
     margin-left: 1vw;
     float:right;
-    /*float:right;
-    margin-right:3vw;*/
-}
 
+}
+/*moves buttons to the further top right hand side used on index.html*/
 #btnfarright {
     margin-left: 3vw;
     float:right;
 
 }
 
-/* css for header */
-#indexBunny {
-	float: left;
-	margin-left: 100 pts;
-	 display: flex;
-    justify-content: center;
-  position: absolute;
-  overflow: hidden;
-  height: 30%;
-  width: 35.7%;
-  top: 20%;
-  bottom: 5%;
-  right: 35%;
-  left: 35%;
-position:relative;
-}
-
-/* buttons appearance properties*/
+/*buttons on index.html aesthetic properties*/
 .index-btn{
     border-radius: 4px;
     float: center;
@@ -124,13 +89,14 @@ position:relative;
     font-size: 26px;
     border: 6px solid black;
 }
-/*editing buttons appearance when hovered over to boost responsiveness*/
+/*hover feature on index.html buttons to boost responsiveness*/
 .index-btn:hover {
-  background-color: black;
+  background-color: black; /*contrasting colours to make it clearly responsive*/
   color: white;
   border: 6px solid white;
 }
 
+/*properties of necklace button on index.html page*/
 #index-necklacesbtn {
     justify-content: center;
     float: center;
@@ -141,7 +107,7 @@ position:relative;
   left: 40%;
 }
 
-/* buttons format outwith the index page*/
+/* button format outwith the index.html page*/
 .classic-btn {
     border-radius: 4px;
     padding: 10px 16px;
@@ -151,7 +117,7 @@ position:relative;
     border: 6px solid black;
     padding: 3px 16px;
 }
-
+/*hover function on buttons similar to index-btn to ensure consistency*/
 .classic-btn:hover {
     background-color: black;
     color:white;
@@ -159,23 +125,12 @@ position:relative;
 }
 
 
-.logout-btn{
-    background-color: log ;
-}
-
-#account-loginsignupbtn {
-    float: center;
-    font-size: 50px !important;
-    text-align: center;
-}
-
-
-/* css for text */
-
+/*contact.html page font*/
 .contactus {
     font-size: 16px;
 }
 
+/*paragraph text properties*/
 p {
 	font-size: 18px;
 	font-family: Archivo;
@@ -184,6 +139,7 @@ p {
 	text-align: center;
 }
 
+/*aesthetic changes to search bar*/
 .search-bar{
     height: 37px;
     width: 200px;
@@ -191,19 +147,18 @@ p {
 
 }
 
-/* The navbar container */
+/* The navbar container on every page except index.html */
 .topnav {
     position: relative;
-  left: 0;
-  color: #c1c1c1;
-  text-align: right;
-  height: 2%;
-  padding: 1%;
-  width: 100%;
-  text-align: justify;
-	/*top: -60px;*/
-	paddling-left: 100px;
-  overflow: hidden;
+    left: 0;
+    color: #c1c1c1;
+    text-align: right;
+    height: 2%;
+    padding: 1%;
+    width: 100%;
+    text-align: justify;
+    paddling-left: 100px;
+    overflow: hidden;
 }
 
 /* Navigation bar shown on every page outwith home page (index.html) */
@@ -220,53 +175,46 @@ p {
   color: black;
 }
 
+/*text elements with the text in white*/
 h1, p, h3, h4, h5 {
 	color: white;
 }
 
+/*font size of heading 1*/
 h1 {
 	font-size: 7vh;
 }
 
+/*centering elements*/
 .center {
   margin-left: auto;
   margin-right: auto;
 }
 
+/*font size change and text will be in blue*/
 h2 {
 	color: #67B7E6;
 	font-size: 4vh;
 }
 
+/*font size of heading 3*/
 h3 {
 	font-size: 2.5vh;
 }
 
+/*font size of heading 4*/
 h4 {
 	font-size: 25px;
 	font-size: 3.5vh;
 }
 
+/*font size of heading 5*/
 h5 {
 	font-size: 6vh;
 }
 
-.index-media {
-    /*height: 30%;
-    width: 50%;
-	float: center;
-    justify-content: center;*/
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
-}
 
-#index-scaling {
-    height:280px;
-    width: 375px;
-}
-/* css for image overlay effect on  necklaces page*/
+/* css for image overlay effect on necklaces.html page*/
 .container {
   position: relative;
   width: 180px;
@@ -296,6 +244,8 @@ h5 {
   opacity: 1;
 }
 
+/*controls how the text is shown when the user hovers
+over the images of necklaces on necklaces.html*/
 .text {
   color: #67B7E6;
   font-size: 25px;
