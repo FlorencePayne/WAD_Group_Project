@@ -6,11 +6,13 @@
 {% endblock %}
 
 {% block body_block %}
-{% if registered %}
+{% if registered %} <!--checking if user has signed up-->
 	<h1>thank you for registering!</h1>
+	<!--button allowing user to then log in as opposed signing up-->
 	<a href="{% url 'floppa:login' %}"><button class="classic-btn">log in<br/></button></a>
-{%else%}
+{%else%} <!--this means user hasn't signed up and needs to register-->
 <div>
+
 	<form class = "signup-form" id="user_form" method="post" action="{% url 'floppa:signup' %}"
 												enctype="multipart/form-data">
 		{% csrf_token %}
