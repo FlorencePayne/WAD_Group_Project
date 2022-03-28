@@ -9,27 +9,38 @@
 	<h1>necklaces</h1>
     <div class="search bar">
 		<form>
-			<input type="search" placeholder="Search Necklaces">
+			<input class ="search-bar" type="search" placeholder="Search Necklaces">
 			<button type="submit" class ="search-btn">
 			    <img class = "search-img" src="{% static 'images/search button.png' %}" alt="Click to search" width=50pts/>
 			    </button>
 		</form>
 	</div>
-
+<br>
+</br>
 	<div>
 		{% for necklace in necklaces%}
-		<table>
-			<tr>
+		<table class = "center">
+			<tr class ="center">
 				<td>
-				<div>
+				<div class="container">
 				{% if necklace.image1 %}
-					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" width = 200px ></a>
-					{{necklace.name}}
+					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{{necklace.image1.url}}" alt="Image of necklace" class="image"></a>
+					<div class = "overlay">
+					    <div class="text">{{necklace.price}}</div>
+					</div>
+					<br>
+                    </br>
 				{% else %}
-					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" width = 200px></a>
+					<a href="/floppa/necklaces/{{necklace.slug}}/"><img src="{% static 'images/placeholder.jpg' %}" alt="Placeholder" class"image"></a>
+						<div class = "overlay">
+					    <div class="text">{{necklace.price}}</div>
+					</div>
+					<br>
+                    </br>
 				{% endif %}
-				<h6>{{necklace.price}}</h6>
 				</div>
+				<br>
+                </br>
 				</td>
 			</tr>
 		</table>

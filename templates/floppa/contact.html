@@ -7,7 +7,7 @@
 
 {% block body_block %}
 <h1>customer feedback form</h1>
-<h4>give us your details! :</h4>
+<h4>give us your details:</h4>
 <form id="contact" method="post" action="{% url 'floppa:contact' %}">
 	{% csrf_token %}
 <p>please leave your full name and email address if you would like us to contact you regarding any questions
@@ -22,9 +22,9 @@
 <br />
 <p>please type in the details of your case. we'll get back at you as soon as possible!
 </p>
-<input type="textarea" name="feedback" value="" size="300"/>
+<input class ="contact-largerinput" type="textarea" name="feedback" value="" size="300"/>
 <br />
 <br />
-<input type="submit" value="contact" />
+<input class = "classic-btn" type="submit" value="contact" />
 </form>
 {% endblock %}

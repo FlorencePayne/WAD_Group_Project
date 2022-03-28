@@ -41,7 +41,7 @@
 		<!-- to here!!! -->
 
             <!--the floppabunny logo gif on every page except from home or index.html -->
-            <a id ="logo" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250pts /> </a>
+            <a class ="logo" href = "{% url 'floppa:index' %}"> <img src="{% static 'images/floppabunny.gif' %}" alt="Floppabunny logo" width = 250pts /> </a>
 
 
 
@@ -50,12 +50,14 @@
 		{% endblock %}
 		</div>
 		<div class = "footer">
-			<ul>
+			<ul class="signout-btn">
 			{% if user.is_authenticated %}
 			<a href="{% url 'floppa:signout' %}">
-			<button class = "classic-btn"> sign out </button>
+			<button class = "classic-btn" id = "signout-btn-position"> sign out </button>
 			</a>
 			{% endif %}
+			<br>
+			</br>
 			</ul>
 		</div>
 
