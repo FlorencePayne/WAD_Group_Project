@@ -8,7 +8,7 @@
 {% block body_block %}
     	{% if user.is_authenticated %}
 		<h1> you're logged in ! ₍ᐢ.ˬ.⑅ᐢ₎</h1>
-		
+
 		<a href = "{% url 'floppa:index' %}"><button class = "classic-btn"> back home </button></a>
 		{%else%}
 			<a href = "{% url 'floppa:login' %}">
